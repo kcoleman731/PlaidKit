@@ -15,7 +15,6 @@
 #import "PLDPersistInstitutionsOperation.h"
 #import "PLDFetchTransactionsOperation.h"
 #import "PLDAuthenticationOperation.h"
-#import "PLDAppDelegate.h"
 #import "PLDFetchCategoriesOperation.h"
 #import "PLDPersistCategoriesOperation.h"
 #import "PLDFetchAccountsOperation.h"

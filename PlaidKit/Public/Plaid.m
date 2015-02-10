@@ -48,7 +48,8 @@
     [[self sharedInstance] setCoreDataStack:coreDataStack];
     
     // Setup Plaid Service Manager
-    NSURL *baseURL = [NSURL URLWithString:@"https://tartan.plaid.com/"];
+    //https://tartan.plaid.com/
+    NSURL *baseURL = [NSURL URLWithString:@"https://api.plaid.com/"];
     PLDServiceManager *service = [PLDServiceManager initWithBaseURL:baseURL];
     [[self sharedInstance] setServiceManager:service];
     
