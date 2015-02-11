@@ -10,9 +10,10 @@
 #import "PLDUtilities.h"
 
 NSString *const PLDTransactiontransactionKey = @"_transaction";
+NSString *const PLDTransactionAccountIdentifierKey = @"_account";
 NSString *const PLDTransactionIdentifierKey = @"_id";
 NSString *const PLDTransactionAmountKey = @"amount";
-NSString *const PLDTransactionCategoryIDKey = @"category_id";
+NSString *const PLDTransactionCategoryIdentifierKey = @"category_id";
 NSString *const PLDTransactionDateKey = @"date";
 NSString *const PLDTransactionLocationKey = @"meta.location";
 NSString *const PLDTransactionNameKey = @"name";
@@ -61,10 +62,11 @@ static NSString *TransactionEntityName = @"Transaction";
 {
     Transaction *transaction = [NSEntityDescription insertNewObjectForEntityForName:TransactionEntityName inManagedObjectContext:context];
     if(transaction) {
-        transaction.identifier = transactionData[PLDTransactionsKey];
+        //transaction.account = [self accountForIdentifier:transactionData[PLDTransactionAccountIdentifierKey]];
+        transaction.identifier = transactionData[PLDTransactionIdentifierKey];
         transaction.amount = transactionData[PLDTransactionAmountKey];
-        transaction.categoryIdentifier = transactionData[PLDTransactionCategoryIDKey];
-        transaction.date = transactionData[PLDTransactionDateKey];
+       // transaction.categoryIdentifier = transactionData[PLDTransactionCategoryIdentifierKey];
+        //transaction.date = transactionData[PLDTransactionDateKey];
         transaction.name = transactionData[PLDTransactionNameKey];
         transaction.pending = transactionData[PLDTransactionPendingKey];
     }
@@ -78,6 +80,11 @@ static NSString *TransactionEntityName = @"Transaction";
         return [NSEntityDescription insertNewObjectForEntityForName:TransactionEntityName inManagedObjectContext:managedObjectContext];
     }
     return nil;
+}
+
++ (Account *)accountForIdentifier:(NSString *)identifier
+{
+    nil;
 }
 
 @end
