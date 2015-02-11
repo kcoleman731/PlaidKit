@@ -159,11 +159,45 @@
             PLDAuthenticationItem *item = [PLDAuthenticationItem itemWithResponseData:responseData];
             completion(YES, item, nil);
         } else {
+            [self handleAccountData:responseData[@"accounts"]];
+            [self handleTransactionData:responseData[@"transactions"]];
+            [self handleAccessToken:responseData[@"access_token"] accountNumber:responseData[@"accounts"][0]];
             completion(YES, nil, nil);
         }
     } failure:^(NSError *error) {
         completion(NO, nil, error);
     }];
+}
+
+- (void)handleAccountData:(NSDictionary *)accountData
+{
+    __block PLDPersistAccountsOperation *operation;
+    operation = [self.operationController persistAccountData:accountData completion:^{
+        if (operation.error) {
+            NSLog(@"Failed persisting transaction data with error: %@", operation.error);
+        } else {
+            NSLog(@"Transaction Data Persisted");
+        }
+    }];
+}
+
+- (void)handleTransactionData:(NSDictionary *)transactionData
+{
+    __block PLDPersistTransactionsOperation *operation;
+    operation = [self.operationController persistTransactionData:transactionData completion:^{
+        if (operation.error) {
+            NSLog(@"Failed persisting transaction data with error: %@", operation.error);
+        } else {
+            NSLog(@"Transaction Data Persisted");
+        }
+    }];
+}
+
+- (void)handleAccessToken:(NSString *)accessToken accountNumber:(NSDictionary *)accountData;
+{
+    NSString *accountIdentifier = accountData[@"id"];
+    [[NSUserDefaults standardUserDefaults] setValue:accessToken forKey:accountIdentifier];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 #pragma mark - Authentication Methods 
