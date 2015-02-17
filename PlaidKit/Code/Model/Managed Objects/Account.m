@@ -2,7 +2,7 @@
 //  Account.m
 //  PlaidKit
 //
-//  Created by Kevin Coleman on 2/4/15.
+//  Created by Kevin Coleman on 2/16/15.
 //  Copyright (c) 2015 Kevin Coleman. All rights reserved.
 //
 
@@ -21,6 +21,8 @@
 @dynamic limit;
 @dynamic name;
 @dynamic number;
+@dynamic routing;
+@dynamic shortNumber;
 @dynamic type;
 @dynamic balance;
 @dynamic owner;

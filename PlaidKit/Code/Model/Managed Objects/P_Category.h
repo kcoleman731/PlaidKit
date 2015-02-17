@@ -1,5 +1,5 @@
 //
-//  MFA.h
+//  P_Category.h
 //  PlaidKit
 //
 //  Created by Kevin Coleman on 2/16/15.
@@ -10,10 +10,9 @@
 #import <CoreData/CoreData.h>
 
 
-@interface MFA : NSManagedObject
+@interface P_Category : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * code;
-@property (nonatomic, retain) NSNumber * list;
-@property (nonatomic, retain) NSNumber * questions;
+@property (nonatomic, retain) NSString * identifier;
+@property (nonatomic, retain) NSString * type;
 
 @end

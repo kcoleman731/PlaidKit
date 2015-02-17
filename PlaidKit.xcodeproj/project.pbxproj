@@ -34,16 +34,6 @@
 		0A315BBE1A8B423800AB893B /* Transaction+PLDTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315B831A8B423800AB893B /* Transaction+PLDTransaction.m */; };
 		0A315BBF1A8B423800AB893B /* User+PLDUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315B851A8B423800AB893B /* User+PLDUser.m */; };
 		0A315BC01A8B423800AB893B /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315B871A8B423800AB893B /* CoreDataStack.m */; };
-		0A315BC11A8B423800AB893B /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315B8A1A8B423800AB893B /* Account.m */; };
-		0A315BC21A8B423800AB893B /* Balance.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315B8C1A8B423800AB893B /* Balance.m */; };
-		0A315BC31A8B423800AB893B /* Credential.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315B8E1A8B423800AB893B /* Credential.m */; };
-		0A315BC41A8B423800AB893B /* Institution.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315B901A8B423800AB893B /* Institution.m */; };
-		0A315BC51A8B423800AB893B /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315B921A8B423800AB893B /* Location.m */; };
-		0A315BC61A8B423800AB893B /* MFA.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315B941A8B423800AB893B /* MFA.m */; };
-		0A315BC71A8B423800AB893B /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315B961A8B423800AB893B /* Product.m */; };
-		0A315BC81A8B423800AB893B /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315B981A8B423800AB893B /* Transaction.m */; };
-		0A315BC91A8B423800AB893B /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315B9A1A8B423800AB893B /* User.m */; };
-		0A315BCA1A8B423800AB893B /* Plaid.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A315B9B1A8B423800AB893B /* Plaid.xcdatamodeld */; };
 		0A315BCB1A8B423800AB893B /* HTTPResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315B9F1A8B423800AB893B /* HTTPResponseSerializer.m */; };
 		0A315BCC1A8B423800AB893B /* PLDServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315BA11A8B423800AB893B /* PLDServiceManager.m */; };
 		0A315BCD1A8B423800AB893B /* Plaid.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315BA41A8B423800AB893B /* Plaid.m */; };
@@ -54,6 +44,17 @@
 		0A315BD71A8B424100AB893B /* PLDOperationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315BD21A8B424100AB893B /* PLDOperationTests.m */; };
 		0A315BD81A8B424100AB893B /* PLDServiceManagerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315BD31A8B424100AB893B /* PLDServiceManagerTest.m */; };
 		0A315BD91A8B424100AB893B /* PLDTestUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315BD51A8B424100AB893B /* PLDTestUtilities.m */; };
+		0AB801701A932328004E6185 /* Plaid.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0AB8016E1A932328004E6185 /* Plaid.xcdatamodeld */; };
+		0AB801761A9323E4004E6185 /* Balance.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB801751A9323E4004E6185 /* Balance.m */; };
+		0AB801791A9323E4004E6185 /* Institution.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB801781A9323E4004E6185 /* Institution.m */; };
+		0AB8017C1A9323E4004E6185 /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB8017B1A9323E4004E6185 /* Transaction.m */; };
+		0AB8017F1A9323E5004E6185 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB8017E1A9323E5004E6185 /* User.m */; };
+		0AB801821A9323E5004E6185 /* MFA.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB801811A9323E5004E6185 /* MFA.m */; };
+		0AB801851A9323E5004E6185 /* Credential.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB801841A9323E5004E6185 /* Credential.m */; };
+		0AB801881A9323E5004E6185 /* P_Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB801871A9323E5004E6185 /* P_Category.m */; };
+		0AB8018B1A9323E5004E6185 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB8018A1A9323E5004E6185 /* Product.m */; };
+		0AB8018E1A9323E5004E6185 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB8018D1A9323E5004E6185 /* Location.m */; };
+		0AB801911A9323E5004E6185 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB801901A9323E5004E6185 /* Account.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,25 +121,6 @@
 		0A315B851A8B423800AB893B /* User+PLDUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+PLDUser.m"; sourceTree = "<group>"; };
 		0A315B861A8B423800AB893B /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
 		0A315B871A8B423800AB893B /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
-		0A315B891A8B423800AB893B /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
-		0A315B8A1A8B423800AB893B /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
-		0A315B8B1A8B423800AB893B /* Balance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Balance.h; sourceTree = "<group>"; };
-		0A315B8C1A8B423800AB893B /* Balance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Balance.m; sourceTree = "<group>"; };
-		0A315B8D1A8B423800AB893B /* Credential.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Credential.h; sourceTree = "<group>"; };
-		0A315B8E1A8B423800AB893B /* Credential.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Credential.m; sourceTree = "<group>"; };
-		0A315B8F1A8B423800AB893B /* Institution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Institution.h; sourceTree = "<group>"; };
-		0A315B901A8B423800AB893B /* Institution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Institution.m; sourceTree = "<group>"; };
-		0A315B911A8B423800AB893B /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
-		0A315B921A8B423800AB893B /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
-		0A315B931A8B423800AB893B /* MFA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFA.h; sourceTree = "<group>"; };
-		0A315B941A8B423800AB893B /* MFA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFA.m; sourceTree = "<group>"; };
-		0A315B951A8B423800AB893B /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
-		0A315B961A8B423800AB893B /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
-		0A315B971A8B423800AB893B /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
-		0A315B981A8B423800AB893B /* Transaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transaction.m; sourceTree = "<group>"; };
-		0A315B991A8B423800AB893B /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		0A315B9A1A8B423800AB893B /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		0A315B9C1A8B423800AB893B /* Plaid.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Plaid.xcdatamodel; sourceTree = "<group>"; };
 		0A315B9E1A8B423800AB893B /* HTTPResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPResponseSerializer.h; sourceTree = "<group>"; };
 		0A315B9F1A8B423800AB893B /* HTTPResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPResponseSerializer.m; sourceTree = "<group>"; };
 		0A315BA01A8B423800AB893B /* PLDServiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDServiceManager.h; sourceTree = "<group>"; };
@@ -156,6 +138,27 @@
 		0A315BD31A8B424100AB893B /* PLDServiceManagerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDServiceManagerTest.m; sourceTree = "<group>"; };
 		0A315BD41A8B424100AB893B /* PLDTestUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDTestUtilities.h; sourceTree = "<group>"; };
 		0A315BD51A8B424100AB893B /* PLDTestUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDTestUtilities.m; sourceTree = "<group>"; };
+		0AB8016F1A932328004E6185 /* Plaid.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Plaid.xcdatamodel; sourceTree = "<group>"; };
+		0AB801741A9323E4004E6185 /* Balance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Balance.h; path = PlaidKit/Code/Model/Balance.h; sourceTree = SOURCE_ROOT; };
+		0AB801751A9323E4004E6185 /* Balance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Balance.m; path = PlaidKit/Code/Model/Balance.m; sourceTree = SOURCE_ROOT; };
+		0AB801771A9323E4004E6185 /* Institution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Institution.h; path = PlaidKit/Code/Model/Institution.h; sourceTree = SOURCE_ROOT; };
+		0AB801781A9323E4004E6185 /* Institution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Institution.m; path = PlaidKit/Code/Model/Institution.m; sourceTree = SOURCE_ROOT; };
+		0AB8017A1A9323E4004E6185 /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Transaction.h; path = PlaidKit/Code/Model/Transaction.h; sourceTree = SOURCE_ROOT; };
+		0AB8017B1A9323E4004E6185 /* Transaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Transaction.m; path = PlaidKit/Code/Model/Transaction.m; sourceTree = SOURCE_ROOT; };
+		0AB8017D1A9323E5004E6185 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = PlaidKit/Code/Model/User.h; sourceTree = SOURCE_ROOT; };
+		0AB8017E1A9323E5004E6185 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = PlaidKit/Code/Model/User.m; sourceTree = SOURCE_ROOT; };
+		0AB801801A9323E5004E6185 /* MFA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFA.h; path = PlaidKit/Code/Model/MFA.h; sourceTree = SOURCE_ROOT; };
+		0AB801811A9323E5004E6185 /* MFA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFA.m; path = PlaidKit/Code/Model/MFA.m; sourceTree = SOURCE_ROOT; };
+		0AB801831A9323E5004E6185 /* Credential.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Credential.h; path = PlaidKit/Code/Model/Credential.h; sourceTree = SOURCE_ROOT; };
+		0AB801841A9323E5004E6185 /* Credential.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Credential.m; path = PlaidKit/Code/Model/Credential.m; sourceTree = SOURCE_ROOT; };
+		0AB801861A9323E5004E6185 /* P_Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = P_Category.h; path = PlaidKit/Code/Model/P_Category.h; sourceTree = SOURCE_ROOT; };
+		0AB801871A9323E5004E6185 /* P_Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = P_Category.m; path = PlaidKit/Code/Model/P_Category.m; sourceTree = SOURCE_ROOT; };
+		0AB801891A9323E5004E6185 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Product.h; path = PlaidKit/Code/Model/Product.h; sourceTree = SOURCE_ROOT; };
+		0AB8018A1A9323E5004E6185 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Product.m; path = PlaidKit/Code/Model/Product.m; sourceTree = SOURCE_ROOT; };
+		0AB8018C1A9323E5004E6185 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Location.h; path = PlaidKit/Code/Model/Location.h; sourceTree = SOURCE_ROOT; };
+		0AB8018D1A9323E5004E6185 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Location.m; path = PlaidKit/Code/Model/Location.m; sourceTree = SOURCE_ROOT; };
+		0AB8018F1A9323E5004E6185 /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Account.h; path = PlaidKit/Code/Model/Account.h; sourceTree = SOURCE_ROOT; };
+		0AB801901A9323E5004E6185 /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Account.m; path = PlaidKit/Code/Model/Account.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +200,7 @@
 		0A315B2D1A8B420B00AB893B /* PlaidKit */ = {
 			isa = PBXGroup;
 			children = (
+				0AB8016D1A932328004E6185 /* Resources */,
 				0A315B571A8B423800AB893B /* Code */,
 				0A315B321A8B420B00AB893B /* AppDelegate.h */,
 				0A315B331A8B420B00AB893B /* AppDelegate.m */,
@@ -311,7 +315,6 @@
 				0A315B861A8B423800AB893B /* CoreDataStack.h */,
 				0A315B871A8B423800AB893B /* CoreDataStack.m */,
 				0A315B881A8B423800AB893B /* Managed Objects */,
-				0A315B9B1A8B423800AB893B /* Plaid.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -344,24 +347,26 @@
 		0A315B881A8B423800AB893B /* Managed Objects */ = {
 			isa = PBXGroup;
 			children = (
-				0A315B891A8B423800AB893B /* Account.h */,
-				0A315B8A1A8B423800AB893B /* Account.m */,
-				0A315B8B1A8B423800AB893B /* Balance.h */,
-				0A315B8C1A8B423800AB893B /* Balance.m */,
-				0A315B8D1A8B423800AB893B /* Credential.h */,
-				0A315B8E1A8B423800AB893B /* Credential.m */,
-				0A315B8F1A8B423800AB893B /* Institution.h */,
-				0A315B901A8B423800AB893B /* Institution.m */,
-				0A315B911A8B423800AB893B /* Location.h */,
-				0A315B921A8B423800AB893B /* Location.m */,
-				0A315B931A8B423800AB893B /* MFA.h */,
-				0A315B941A8B423800AB893B /* MFA.m */,
-				0A315B951A8B423800AB893B /* Product.h */,
-				0A315B961A8B423800AB893B /* Product.m */,
-				0A315B971A8B423800AB893B /* Transaction.h */,
-				0A315B981A8B423800AB893B /* Transaction.m */,
-				0A315B991A8B423800AB893B /* User.h */,
-				0A315B9A1A8B423800AB893B /* User.m */,
+				0AB8018F1A9323E5004E6185 /* Account.h */,
+				0AB801901A9323E5004E6185 /* Account.m */,
+				0AB8018C1A9323E5004E6185 /* Location.h */,
+				0AB8018D1A9323E5004E6185 /* Location.m */,
+				0AB801891A9323E5004E6185 /* Product.h */,
+				0AB8018A1A9323E5004E6185 /* Product.m */,
+				0AB801861A9323E5004E6185 /* P_Category.h */,
+				0AB801871A9323E5004E6185 /* P_Category.m */,
+				0AB801831A9323E5004E6185 /* Credential.h */,
+				0AB801841A9323E5004E6185 /* Credential.m */,
+				0AB801801A9323E5004E6185 /* MFA.h */,
+				0AB801811A9323E5004E6185 /* MFA.m */,
+				0AB8017D1A9323E5004E6185 /* User.h */,
+				0AB8017E1A9323E5004E6185 /* User.m */,
+				0AB8017A1A9323E4004E6185 /* Transaction.h */,
+				0AB8017B1A9323E4004E6185 /* Transaction.m */,
+				0AB801771A9323E4004E6185 /* Institution.h */,
+				0AB801781A9323E4004E6185 /* Institution.m */,
+				0AB801741A9323E4004E6185 /* Balance.h */,
+				0AB801751A9323E4004E6185 /* Balance.m */,
 			);
 			path = "Managed Objects";
 			sourceTree = "<group>";
@@ -397,6 +402,14 @@
 				0A315BAB1A8B423800AB893B /* PLDUtilities.m */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		0AB8016D1A932328004E6185 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0AB8016E1A932328004E6185 /* Plaid.xcdatamodeld */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -499,45 +512,46 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A315BCA1A8B423800AB893B /* Plaid.xcdatamodeld in Sources */,
-				0A315BC91A8B423800AB893B /* User.m in Sources */,
-				0A315BC61A8B423800AB893B /* MFA.m in Sources */,
 				0A315BBD1A8B423800AB893B /* Product+PLDProduct.m in Sources */,
+				0AB8018E1A9323E5004E6185 /* Location.m in Sources */,
 				0A315BB71A8B423800AB893B /* Account+PLDAccount.m in Sources */,
 				0A315BBA1A8B423800AB893B /* NSManagedObject+PLDManagedObject.m in Sources */,
 				0A315BAE1A8B423800AB893B /* PLDFetchInstitutionsOperation.m in Sources */,
+				0AB8017F1A9323E5004E6185 /* User.m in Sources */,
+				0AB801761A9323E4004E6185 /* Balance.m in Sources */,
+				0AB801701A932328004E6185 /* Plaid.xcdatamodeld in Sources */,
 				0A315BCF1A8B423800AB893B /* PLDAuthenticationItem.m in Sources */,
 				0A315BB21A8B423800AB893B /* PLDPersistInstitutionsOperation.m in Sources */,
-				0A315BC41A8B423800AB893B /* Institution.m in Sources */,
-				0A315BC21A8B423800AB893B /* Balance.m in Sources */,
 				0A315B341A8B420B00AB893B /* AppDelegate.m in Sources */,
 				0A315BCE1A8B423800AB893B /* PLDAccount.m in Sources */,
 				0A315BAD1A8B423800AB893B /* PLDFetchCategoriesOperation.m in Sources */,
 				0A315BCD1A8B423800AB893B /* Plaid.m in Sources */,
 				0A315BB11A8B423800AB893B /* PLDPersistCategoriesOperation.m in Sources */,
+				0AB801851A9323E5004E6185 /* Credential.m in Sources */,
 				0A315BC01A8B423800AB893B /* CoreDataStack.m in Sources */,
-				0A315BC11A8B423800AB893B /* Account.m in Sources */,
 				0A315BB91A8B423800AB893B /* Institution+PLDInstitution.m in Sources */,
 				0A315BB01A8B423800AB893B /* PLDPersistAccountsOperation.m in Sources */,
+				0AB801881A9323E5004E6185 /* P_Category.m in Sources */,
 				0A315BBF1A8B423800AB893B /* User+PLDUser.m in Sources */,
 				0A315BB51A8B423800AB893B /* PLDOperation.m in Sources */,
+				0AB8018B1A9323E5004E6185 /* Product.m in Sources */,
+				0AB8017C1A9323E4004E6185 /* Transaction.m in Sources */,
+				0AB801791A9323E4004E6185 /* Institution.m in Sources */,
 				0A315BAC1A8B423800AB893B /* PLDFetchAccountsOperation.m in Sources */,
 				0A315BAF1A8B423800AB893B /* PLDFetchTransactionsOperation.m in Sources */,
 				0A315BB61A8B423800AB893B /* PLDOperationController.m in Sources */,
 				0A315BCB1A8B423800AB893B /* HTTPResponseSerializer.m in Sources */,
 				0A315BBE1A8B423800AB893B /* Transaction+PLDTransaction.m in Sources */,
-				0A315BC71A8B423800AB893B /* Product.m in Sources */,
 				0A315BBC1A8B423800AB893B /* P_Category.m in Sources */,
-				0A315BC31A8B423800AB893B /* Credential.m in Sources */,
 				0A315BCC1A8B423800AB893B /* PLDServiceManager.m in Sources */,
-				0A315BC51A8B423800AB893B /* Location.m in Sources */,
 				0A315BB31A8B423800AB893B /* PLDPersistTransactionsOperation.m in Sources */,
+				0AB801911A9323E5004E6185 /* Account.m in Sources */,
+				0AB801821A9323E5004E6185 /* MFA.m in Sources */,
 				0A315BB41A8B423800AB893B /* PLDAuthenticationOperation.m in Sources */,
 				0A315BBB1A8B423800AB893B /* P_Category+PLDCategory.m in Sources */,
 				0A315BD01A8B423800AB893B /* PLDUtilities.m in Sources */,
 				0A315B311A8B420B00AB893B /* main.m in Sources */,
 				0A315BB81A8B423800AB893B /* Balance+PLDBalance.m in Sources */,
-				0A315BC81A8B423800AB893B /* Transaction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -732,6 +746,7 @@
 				0A315B531A8B420B00AB893B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0A315B541A8B420B00AB893B /* Build configuration list for PBXNativeTarget "PlaidKitTests" */ = {
 			isa = XCConfigurationList;
@@ -740,16 +755,17 @@
 				0A315B561A8B420B00AB893B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		0A315B9B1A8B423800AB893B /* Plaid.xcdatamodeld */ = {
+		0AB8016E1A932328004E6185 /* Plaid.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				0A315B9C1A8B423800AB893B /* Plaid.xcdatamodel */,
+				0AB8016F1A932328004E6185 /* Plaid.xcdatamodel */,
 			);
-			currentVersion = 0A315B9C1A8B423800AB893B /* Plaid.xcdatamodel */;
+			currentVersion = 0AB8016F1A932328004E6185 /* Plaid.xcdatamodel */;
 			path = Plaid.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
