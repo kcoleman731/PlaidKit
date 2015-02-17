@@ -43,7 +43,7 @@
 - (void)testMFAAuthentication
 {
     XCTestExpectation *expectation = [self expectationWithDescription:@"Plaid MFA Auth Expectation"];
-    [self.plaid connectWithUsername:PLDTestMFAUsername password:PLDTestPassword institutionType:PLDInstitutionTypeUSBank success:^(NSDictionary *responseData) {
+    [self.plaid connectWithUsername:PLDTestMFAUsername password:PLDTestPassword institutionType:PLDInstitutionTypeWellsFargo success:^(NSDictionary *responseData) {
         [self.plaid MFAAuthWithAnswer:@"tomato" accessToken:PLDTestAccessToken success:^(NSDictionary *responseData) {
             NSLog(@"Response Data: %@", responseData);
             [expectation fulfill];

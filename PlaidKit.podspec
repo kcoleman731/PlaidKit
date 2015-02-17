@@ -13,5 +13,5 @@ Pod::Spec.new do |s|
   s.header_mappings_dir         = 'PlaidKit'
   s.ios.frameworks              = 'UIKit'
   s.ios.deployment_target       = '7.0'
-  s.resource_bundle             = { :PlaidKit => 'PlaidKit/Model/PlaidKit.xcdatamodeld' }
+  s.resource_bundle             = { ‘PlaidKitResource’ => ‘PlaidKit/Resources/*' }
 end
