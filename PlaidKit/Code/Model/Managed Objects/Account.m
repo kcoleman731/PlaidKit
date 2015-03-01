@@ -9,8 +9,6 @@
 #import "Account.h"
 #import "Balance.h"
 #import "Transaction.h"
-#import "User.h"
-
 
 @implementation Account
 

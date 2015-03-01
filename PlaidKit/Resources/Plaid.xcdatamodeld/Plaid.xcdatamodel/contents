@@ -12,7 +12,6 @@
         <attribute name="shortNumber" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="balance" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Balance" inverseName="account" inverseEntity="Balance" syncable="YES"/>
-        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="accounts" inverseEntity="User" syncable="YES"/>
         <relationship name="transactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transaction" inverseName="account" inverseEntity="Transaction" syncable="YES"/>
     </entity>
     <entity name="Balance" representedClassName="Balance" syncable="YES">
@@ -64,16 +63,8 @@
         <relationship name="account" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Account" inverseName="transactions" inverseEntity="Account" syncable="YES"/>
         <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="transaction" inverseEntity="Location" syncable="YES"/>
     </entity>
-    <entity name="User" representedClassName="User" syncable="YES">
-        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="accounts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Account" inverseName="owner" inverseEntity="Account" syncable="YES"/>
-    </entity>
     <elements>
-        <element name="Account" positionX="-63" positionY="-18" width="128" height="240"/>
+        <element name="Account" positionX="-63" positionY="-18" width="128" height="225"/>
         <element name="Balance" positionX="-54" positionY="72" width="128" height="88"/>
         <element name="Credential" positionX="-27" positionY="108" width="128" height="88"/>
         <element name="Institution" positionX="-54" positionY="81" width="128" height="135"/>
@@ -82,6 +73,5 @@
         <element name="P_Category" positionX="-18" positionY="99" width="128" height="75"/>
         <element name="Product" positionX="-18" positionY="117" width="128" height="103"/>
         <element name="Transaction" positionX="-54" positionY="63" width="128" height="163"/>
-        <element name="User" positionX="-36" positionY="72" width="128" height="135"/>
     </elements>
 </model>
