@@ -25,6 +25,6 @@ extern NSString *const PLDAccountBalaceKey;
 
 @interface Account (PLDAccount)
 
-+ (instancetype)initWithAccountData:(NSDictionary *)accountData context:(NSManagedObjectContext *)context;
++ (instancetype)initWithData:(NSDictionary *)data context:(NSManagedObjectContext *)context;
 
 @end

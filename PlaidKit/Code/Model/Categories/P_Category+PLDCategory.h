@@ -7,6 +7,7 @@
 //
 
 #import "P_Category.h"
+#import "NSManagedObject+PLDManagedObject.h"
 
 extern NSString * PLDCategoryEntityName;
 

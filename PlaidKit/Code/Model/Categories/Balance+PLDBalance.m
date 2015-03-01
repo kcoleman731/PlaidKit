@@ -32,13 +32,4 @@ NSString *const PLDCurrentBalanceKey = @"CurrentBalanceKey";
     return balance;
 }
 
-+ (Balance *)instanceWithIdentifier:(NSString *)identifier
-               managedObjectContext:(NSManagedObjectContext *)managedObjectContext;
-{
-    if (![self checkForExistingEntity:PLDBalanceIdentifier withIdentifier:identifier andContext:managedObjectContext]) {
-        return [NSEntityDescription insertNewObjectForEntityForName:PLDBalanceIdentifier inManagedObjectContext:managedObjectContext];
-    }
-    return nil;
-}
-
 @end

@@ -63,11 +63,6 @@ NSString *const PLDTestAccessToken = @"test";
     return operation;
 }
 
-- (PLDFetchAccountsOperation *)fetchAccountsWithCompletion:(void(^)(void))completion
-{
-    return nil;
-}
-
 - (PLDPersistAccountsOperation *)persistAccountData:(NSDictionary *)data
                 completion:(void(^)(void))completion
 {

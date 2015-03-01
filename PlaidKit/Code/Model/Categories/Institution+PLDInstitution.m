@@ -40,16 +40,24 @@ NSString *const PLDInstitutionEntityName = @"Institution";
 
 + (Institution *)institutionWithData:(NSDictionary *)data context:(NSManagedObjectContext *)context
 {
-    NSLog(@"Data: %@", data);
-    Institution *institution = [NSEntityDescription insertNewObjectForEntityForName:PLDInstitutionEntityName inManagedObjectContext:context];
+    Institution *institution = [self instanceWithIdentifier:data[PLDInstitutionIdentifierKey]  managedObjectContext:context];
     if (institution) {
         institution.hasMFA = data[PLDInstitutionHasMFAKey];
-        institution.identifier = data[PLDInstitutionIdentifierKey] ;
+        institution.identifier = data[PLDInstitutionIdentifierKey];
         institution.name = data[PLDInstitutionNameKey];
         institution.type = data[PLDInstitutionTypeKey];
         institution.products = [Product productWithData:data[PLDInstitutionProductsKey] context:context];
     }
     return institution;
+}
+
++ (Institution *)instanceWithIdentifier:(NSString *)identifier
+               managedObjectContext:(NSManagedObjectContext *)managedObjectContext;
+{
+    if (![self checkForExistingEntity:PLDInstitutionEntityName withIdentifier:identifier andContext:managedObjectContext]) {
+        return [NSEntityDescription insertNewObjectForEntityForName:PLDInstitutionEntityName inManagedObjectContext:managedObjectContext];
+    }
+    return nil;
 }
 
 NSString *PLDInstitutionWithType(PLDInstitutionType institutionType)

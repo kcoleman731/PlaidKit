@@ -36,15 +36,15 @@ static NSRange const HTTPSuccessStatusCodeRange = {200, 100};
 static NSRange const HTTPClientErrorStatusCodeRange = {400, 100};
 static NSRange const HTTPServerErrorStatusCodeRange = {500, 100};
 
-static NSRange const HTTPBadRequestStatusCodeRange = {1000, 100};
-static NSRange const HTTPUnauthorizedStatusCodeRange = {1100, 100};
-static NSRange const HTTPInvalidAuthStatusCodeRange = {1200, 100};
-static NSRange const HTTPInstitutionsStatusCodeRange = {1300, 100};
-static NSRange const HTTEntitiesStatusCodeRange = {1400, 100};
-static NSRange const HTTPCategoriesStatusCodeRange = {1500, 100};
-static NSRange const HTTPItemMissingStatusCodeRange = {1600, 100};
-static NSRange const HTTPServerErrorCodeRange = {1700, 100};
-static NSRange const HTTPMaintenanceCodeRange = {1800, 100};
+//static NSRange const HTTPBadRequestStatusCodeRange = {1000, 100};
+//static NSRange const HTTPUnauthorizedStatusCodeRange = {1100, 100};
+//static NSRange const HTTPInvalidAuthStatusCodeRange = {1200, 100};
+//static NSRange const HTTPInstitutionsStatusCodeRange = {1300, 100};
+//static NSRange const HTTEntitiesStatusCodeRange = {1400, 100};
+//static NSRange const HTTPCategoriesStatusCodeRange = {1500, 100};
+//static NSRange const HTTPItemMissingStatusCodeRange = {1600, 100};
+//static NSRange const HTTPServerErrorCodeRange = {1700, 100};
+//static NSRange const HTTPMaintenanceCodeRange = {1800, 100};
 
 typedef NS_ENUM(NSInteger, HTTPResponseStatus) {
     HTTPResponseStatusSuccess,
@@ -126,7 +126,6 @@ static NSString *HTTPErrorMessageFromErrorRepresentation(id representation)
         return NO;
     }
     
-    
     if (status != HTTPResponseStatusSuccess) {
         NSString *errorMessage = HTTPErrorMessageFromErrorRepresentation(deserializedResponse);
         if (error) *error = [NSError errorWithDomain:HTTPResponseErrorDomain code:(status == HTTPResponseStatusClientError ? HTTPResponseErrorClientError : HTTPResponseErrorServerError) userInfo:@{NSLocalizedDescriptionKey: errorMessage}];
@@ -136,11 +135,5 @@ static NSString *HTTPErrorMessageFromErrorRepresentation(id representation)
     *object = deserializedResponse;
     return YES;
 }
-
-- (void)clientErrorWithResponse:(NSHTTPURLResponse *)response
-{
-
-}
-
 
 @end

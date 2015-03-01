@@ -11,10 +11,11 @@
 
 @implementation PLDFetchCategoriesOperation
 
-
 - (void)executeOperation
 {
-    [self fetchCategories];
+    if (self.isReady) {
+        [self fetchCategories];
+    }
 }
 
 - (void)fetchCategories

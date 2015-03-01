@@ -7,6 +7,7 @@
 //
 
 #import "Product.h"
+#import "NSManagedObject+PLDManagedObject.h"
 
 @interface Product (PLDProduct)
 

@@ -28,6 +28,13 @@
 
 - (void)executeOperation
 {
+    if (self.isReady) {
+        [self persistAccountData];
+    }
+}
+
+- (void)persistAccountData
+{
     for (NSDictionary *accountData in self.accountData) {
         [Account initWithAccountData:accountData context:self.context];
     }

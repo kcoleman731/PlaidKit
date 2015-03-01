@@ -28,6 +28,13 @@
 
 - (void)executeOperation
 {
+    if (self.isReady) {
+        [self persistTransactionData];
+    }
+}
+
+- (void)persistTransactionData
+{
     for (NSDictionary *transactionData in self.transactionData) {
         [Transaction initWithTransactionData:transactionData withContect:self.context];
     }

@@ -28,6 +28,13 @@
 
 - (void)executeOperation
 {
+    if (self.isReady) {
+        [self persistCategoryData];
+    }
+}
+
+- (void)persistCategoryData
+{
     for (NSDictionary *categoryData in self.categoryData) {
         [P_Category categoryWithData:categoryData context:self.context];
     }
@@ -39,7 +46,6 @@
     }
     [self finish];
 }
-
 
 
 @end

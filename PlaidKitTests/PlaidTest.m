@@ -89,7 +89,7 @@
     [Plaid connectAccount:account completion:^(BOOL success, PLDAuthenticationItem *authenticationItem, NSError *error) {
         authenticationItem.answer = @"Tomato";
         [Plaid completeAuthenticationWithItem:authenticationItem completion:^(BOOL success, NSError *error) {
-            //[expectation fulfill];
+            [expectation fulfill];
         }];
     }];
     [self waitForCompletionWithTimeOut:30];
@@ -111,7 +111,16 @@
 
 - (void)testToVerifyTransactionDataPersisted
 {
-
+    XCTestExpectation *expectation = [self expectationWithDescription:@"Plaid Connect Verification"];
+    
+    PLDAccount *account = [PLDAccount accountWithInstitutionType:PLDInstitutionTypeAmericanExpress];
+    account.username = PLDTestMFAUsername;
+    account.password = PLDTestPassword;
+    
+    [Plaid connectAccount:account completion:^(BOOL success, PLDAuthenticationItem *authenticationItem, NSError *error) {
+        [expectation fulfill];
+    }];
+    [self waitForCompletionWithTimeOut:10];
 }
 
 - (void)testToVerifyAccountDataPersisted

@@ -26,6 +26,13 @@
 
 - (void)executeOperation
 {
+    if (self.isReady) {
+        [self persistInstitutionOperation];
+    }
+}
+
+- (void)persistInstitutionOperation
+{
     for (NSDictionary *institution in self.institutionData) {
         [Institution institutionWithData:institution context:self.context];
     }

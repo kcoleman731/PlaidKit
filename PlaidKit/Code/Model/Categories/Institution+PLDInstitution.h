@@ -7,6 +7,7 @@
 //
 
 #import "Institution.h"
+#import "NSManagedObject+PLDManagedObject.h"
 
 typedef NS_ENUM(NSUInteger, PLDInstitutionType) {
     PLDInstitutionTypeAmericanExpress,

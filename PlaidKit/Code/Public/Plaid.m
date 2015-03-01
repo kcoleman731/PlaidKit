@@ -7,6 +7,7 @@
 //
 
 #import "Plaid.h"
+#import <UIKit/UIKit.h>
 #import "PLDServiceManager.h"
 #import "PLDOperationController.h"
 #import "CoreDataStack.h"
@@ -43,7 +44,8 @@
     [[self sharedInstance] setSecret:secret];
     
     // Initialize Core Data Stack
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"PlaidKitResource.bundle/Plaid" withExtension:@"momd"];
+    // Use @"PlaidKitResource.bundle/Plaid" when not running tests
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Plaid" withExtension:@"momd"];
     NSManagedObjectModel *managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     CoreDataStack *coreDataStack = [CoreDataStack stackWithManagedObjectModel:managedObjectModel];
     [[self sharedInstance] setCoreDataStack:coreDataStack];
@@ -72,11 +74,116 @@
                                                  name:NSManagedObjectContextDidSaveNotification
                                                object:self.coreDataStack.persistenceContext];
     
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//                                             selector:@selector(applicationWillResignActive:)
-//                                                 name:UIApplicationWillResignActiveNotification
-//                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(applicationWillResignActive:)
+                                                 name:UIApplicationWillResignActiveNotification
+                                               object:nil];
 }
+
+#pragma mark - Credentials
+
++ (NSString *)secret
+{
+    return [[self sharedInstance] secret];
+}
+
++ (NSString *)clientID
+{
+    return  [[self sharedInstance] clientID];
+}
+
+#pragma mark - Connection
+
++ (void)connectAccount:(PLDAccount *)account
+            completion:(void(^)(BOOL success, PLDAuthenticationItem *authenticationItem, NSError *error))completion;
+{
+    [[self sharedInstance] connectAccount:account completion:completion];
+}
+
+- (void)connectAccount:(PLDAccount *)account
+            completion:(void(^)(BOOL success, PLDAuthenticationItem *authenticationItem, NSError *error))completion;
+{
+    [self.serviceManager connectWithUsername:account.username password:account.password institutionType:account.institutionType success:^(NSDictionary *responseData) {
+        if ([responseData valueForKey:PLDAuthenticationItemMFAKey]) {
+            PLDAuthenticationItem *item = [PLDAuthenticationItem itemWithResponseData:responseData];
+            completion(YES, item, nil);
+        } else {
+            [self persistAccountData:responseData[@"accounts"]];
+            [self persistTransactionData:responseData[@"transactions"]];
+            [self persistAccessToken:responseData[@"access_token"] forAccountNumber:responseData[@"accounts"][0]];
+            completion(YES, nil, nil);
+        }
+    } failure:^(NSError *error) {
+        completion(NO, nil, error);
+    }];
+}
+
+#pragma mark - Authentication Methods 
+
++ (void)authenticateAccount:(PLDAccount *)account
+                 completion:(void(^)(BOOL success, PLDAuthenticationItem *authenticationItem, NSError *error))completion;
+{
+    [[self sharedInstance] authenticateAccount:account completion:completion];
+}
+
+- (void)authenticateAccount:(PLDAccount *)account
+                 completion:(void(^)(BOOL success, PLDAuthenticationItem *authenticationItem, NSError *error))completion;
+{
+    [self.serviceManager authenticateWithUsername:account.username password:account.password institutionType:account.institutionType success:^(NSDictionary *responseData) {
+        if ([responseData valueForKey:PLDAuthenticationItemMFAKey]) {
+            PLDAuthenticationItem *item = [PLDAuthenticationItem itemWithResponseData:responseData];
+            completion(YES, item, nil);
+        } else {
+            completion(YES, nil, nil);
+        }
+    } failure:^(NSError *error) {
+        completion(NO, nil, error);
+    }];
+}
+
+#pragma mark - Multi Factor Auth 
+
++ (void)completeAuthenticationWithItem:(PLDAuthenticationItem *)item
+                            completion:(void(^)(BOOL success, NSError *error))competion
+{
+    [[self sharedInstance] completeAuthenticationWithItem:item completion:competion];
+}
+
+- (void)completeAuthenticationWithItem:(PLDAuthenticationItem *)item
+                            completion:(void(^)(BOOL success, NSError *error))competion
+{
+    [self.serviceManager MFAAuthWithAnswer:item.answer accessToken:item.accessToken success:^(NSDictionary *responseData) {
+        [self fetchTransactionsForAccessToken:nil];
+        competion(YES, nil);
+    } failure:^(NSError *error) {
+        [self fetchTransactionsForAccessToken:@"test"];
+        competion(NO, error);
+    }];
+}
+
+- (void)fetchTransactionsForAccessToken:(NSString *)accessToken;
+{
+    __block PLDFetchTransactionsOperation *operation;
+    operation = [self.operationController fetchTransactionsForAccessToken:accessToken completion:^{
+        if (operation.transactionData) {
+            [self persistTransactionData:operation.transactionData];
+        }
+    }];
+}
+
+#pragma mark - Deauthentication 
+
++ (void)deauthenticateWithCompletion:(void(^)(BOOL success, NSError *error))completion
+{
+    
+}
+
++ (void)deleteAccountWithCompletion:(void(^)(BOOL success, NSError *error))completion
+{
+    
+}
+
+#pragma mark - Fetch Methods
 
 + (NSArray *)allAccounts
 {
@@ -103,7 +210,7 @@
     return transactions;
 }
 
-+ (NSArray *)categories
++ (NSArray *)allCategories
 {
     Plaid *plaid = [self sharedInstance];
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:PLDCategoryEntityName];
@@ -115,7 +222,7 @@
     return categories;
 }
 
-+ (NSArray *)institutions
++ (NSArray *)allInstitutions
 {
     Plaid *plaid = [self sharedInstance];
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:PLDInstitutionEntityName];
@@ -127,7 +234,41 @@
     return institutions;
 }
 
-#pragma mark - Initial Fetch Methods
+#pragma mark - Peristence
+
+- (void)persistAccountData:(NSDictionary *)accountData
+{
+    __block PLDPersistAccountsOperation *operation;
+    operation = [self.operationController persistAccountData:accountData completion:^{
+        if (operation.error) {
+            NSLog(@"Failed persisting transaction data with error: %@", operation.error);
+        } else {
+            NSLog(@"Transaction Data Persisted");
+        }
+    }];
+}
+
+- (void)persistTransactionData:(NSDictionary *)transactionData
+{
+    __block PLDPersistTransactionsOperation *operation;
+    operation = [self.operationController persistTransactionData:transactionData completion:^{
+        if (operation.error) {
+            NSLog(@"Failed persisting transaction data with error: %@", operation.error);
+        } else {
+            NSLog(@"Transaction Data Persisted");
+        }
+    }];
+}
+
+- (void)persistAccessToken:(NSString *)accessToken forAccountNumber:(NSDictionary *)accountData;
+{
+    NSString *accountIdentifier = accountData[@"id"];
+    [[NSUserDefaults standardUserDefaults] setValue:accessToken forKey:accountIdentifier];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+
+#pragma mark - Fetch Methods
 
 - (void)fetchPlaidInstitutionData
 {
@@ -156,132 +297,7 @@
     }];
 }
 
-+ (NSString *)secret
-{
-    return [[self sharedInstance] secret];
-}
-
-+ (NSString *)clientID
-{
-    return  [[self sharedInstance] clientID];
-}
-
-#pragma mark - Connection Methods 
-
-+ (void)connectAccount:(PLDAccount *)account
-            completion:(void(^)(BOOL success, PLDAuthenticationItem *authenticationItem, NSError *error))completion;
-{
-    [[self sharedInstance] connectAccount:account completion:completion];
-}
-
-- (void)connectAccount:(PLDAccount *)account
-            completion:(void(^)(BOOL success, PLDAuthenticationItem *authenticationItem, NSError *error))completion;
-{
-    [self.serviceManager connectWithUsername:account.username password:account.password institutionType:account.institutionType success:^(NSDictionary *responseData) {
-        if ([responseData valueForKey:PLDAuthenticationItemMFAKey]) {
-            PLDAuthenticationItem *item = [PLDAuthenticationItem itemWithResponseData:responseData];
-            completion(YES, item, nil);
-        } else {
-            [self handleAccountData:responseData[@"accounts"]];
-            [self handleTransactionData:responseData[@"transactions"]];
-            [self handleAccessToken:responseData[@"access_token"] accountNumber:responseData[@"accounts"][0]];
-            completion(YES, nil, nil);
-        }
-    } failure:^(NSError *error) {
-        completion(NO, nil, error);
-    }];
-}
-
-- (void)handleAccountData:(NSDictionary *)accountData
-{
-    __block PLDPersistAccountsOperation *operation;
-    operation = [self.operationController persistAccountData:accountData completion:^{
-        if (operation.error) {
-            NSLog(@"Failed persisting transaction data with error: %@", operation.error);
-        } else {
-            NSLog(@"Transaction Data Persisted");
-        }
-    }];
-}
-
-- (void)handleTransactionData:(NSDictionary *)transactionData
-{
-    __block PLDPersistTransactionsOperation *operation;
-    operation = [self.operationController persistTransactionData:transactionData completion:^{
-        if (operation.error) {
-            NSLog(@"Failed persisting transaction data with error: %@", operation.error);
-        } else {
-            NSLog(@"Transaction Data Persisted");
-        }
-    }];
-}
-
-- (void)handleAccessToken:(NSString *)accessToken accountNumber:(NSDictionary *)accountData;
-{
-    NSString *accountIdentifier = accountData[@"id"];
-    [[NSUserDefaults standardUserDefaults] setValue:accessToken forKey:accountIdentifier];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-}
-
-#pragma mark - Authentication Methods 
-
-+ (void)authenticateAccount:(PLDAccount *)account
-                 completion:(void(^)(BOOL success, PLDAuthenticationItem *authenticationItem, NSError *error))completion;
-{
-    [[self sharedInstance] authenticateAccount:account completion:completion];
-}
-
-- (void)authenticateAccount:(PLDAccount *)account
-                 completion:(void(^)(BOOL success, PLDAuthenticationItem *authenticationItem, NSError *error))completion;
-{
-    [self.serviceManager authenticateWithUsername:account.username password:account.password institutionType:account.institutionType success:^(NSDictionary *responseData) {
-        if ([responseData valueForKey:PLDAuthenticationItemMFAKey]) {
-            PLDAuthenticationItem *item = [PLDAuthenticationItem itemWithResponseData:responseData];
-            completion(YES, item, nil);
-        } else {
-            completion(YES, nil, nil);
-        }
-    } failure:^(NSError *error) {
-        completion(NO, nil, error);
-    }];
-}
-
-+ (void)completeAuthenticationWithItem:(PLDAuthenticationItem *)item
-                            completion:(void(^)(BOOL success, NSError *error))competion
-{
-    [[self sharedInstance] completeAuthenticationWithItem:item completion:competion];
-}
-
-- (void)completeAuthenticationWithItem:(PLDAuthenticationItem *)item
-                            completion:(void(^)(BOOL success, NSError *error))competion
-{
-    [self.serviceManager MFAAuthWithAnswer:item.answer accessToken:item.accessToken success:^(NSDictionary *responseData) {
-        [self fetchTransactionsForAccessToken:nil];
-        competion(YES, nil);
-    } failure:^(NSError *error) {
-        [self fetchTransactionsForAccessToken:@"test"];
-        competion(NO, error);
-    }];
-}
-
-- (PLDAuthenticationItem *)authenticationChallengeForResponseData:(NSDictionary *)responseData
-{
-    return [PLDAuthenticationItem new];
-}
-
-- (void)fetchTransactionsForAccessToken:(NSString *)accessToken;
-{
-    __block PLDFetchTransactionsOperation *operation;
-    operation = [self.operationController fetchTransactionsForAccessToken:accessToken completion:^{
-        if (operation.transactionData) {
-            PLDPersistTransactionsOperation *persistOperation = [self.operationController persistTransactionData:operation.transactionData completion:^{
-                // Hanlde Failed Transaction Persist
-            }];
-        } else {
-            // Hanlde Failed Transaction Fetch
-        }
-    }];
-}
+#pragma mark - Notification Handlers
 
 - (void)didReceiveManagedObjectContextDidSaveNotification:(NSNotification *)notification
 {

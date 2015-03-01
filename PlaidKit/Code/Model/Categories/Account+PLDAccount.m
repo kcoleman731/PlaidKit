@@ -42,18 +42,18 @@ NSString *const PLDAccountTypeKey = @"type";
 
 NSString *const PLDAccountEntityName = @"Account";
 
-+ (instancetype)initWithAccountData:(NSDictionary *)accountData context:(NSManagedObjectContext *)context
++ (instancetype)initWithData:(NSDictionary *)data context:(NSManagedObjectContext *)context
 {
-    Account *account = [NSEntityDescription insertNewObjectForEntityForName:PLDAccountEntityName inManagedObjectContext:context];
+    Account *account = [self instanceWithIdentifier:data[PLDAccountIdentifierKey] managedObjectContext:context];
     if(account) {
-        account.identifier = accountData[PLDAccountIdentifierKey];
-        account.item = accountData[PLDAccountItemKey];
-        // Handle User
-        account.balance = [Balance initWithBalaceData:accountData[PLDAccountBalanceKey] withContect:context];
-        account.institutionType = accountData[PLDInstitutionTypeKey];
-        account.name = accountData[PLDAccountMetaKey][PLDAccountNameKey];
-        account.shortNumber = accountData[PLDAccountMetaKey][PLDAccountShortNumberKey];
-        account.type = accountData[PLDAccountTypeKey];
+        account.identifier = data[PLDAccountIdentifierKey];
+        account.item = data[PLDAccountItemKey];
+        account.user = data[PLDAccountUserKey];
+        account.balance = [Balance initWithBalaceData:data[PLDAccountBalanceKey] withContect:context];
+        account.institutionType = data[PLDInstitutionTypeKey];
+        account.name = data[PLDAccountMetaKey][PLDAccountNameKey];
+        account.shortNumber = data[PLDAccountMetaKey][PLDAccountShortNumberKey];
+        account.type = data[PLDAccountTypeKey];
     }
     return account;
 }

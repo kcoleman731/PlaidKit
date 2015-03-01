@@ -14,10 +14,8 @@
 #import "PLDPersistAccountsOperation.h"
 #import "PLDPersistInstitutionsOperation.h"
 #import "PLDFetchTransactionsOperation.h"
-#import "PLDAuthenticationOperation.h"
 #import "PLDFetchCategoriesOperation.h"
 #import "PLDPersistCategoriesOperation.h"
-#import "PLDFetchAccountsOperation.h"
 #import "PLDFetchTransactionsOperation.h"
 
 
@@ -30,8 +28,6 @@
 
 - (PLDPersistTransactionsOperation *)persistTransactionData:(NSDictionary *)data
                                                  completion:(void(^)(void))completion;
-
-- (PLDFetchAccountsOperation *)fetchAccountsWithCompletion:(void(^)(void))completion;
 
 - (PLDPersistAccountsOperation *)persistAccountData:(NSDictionary *)data
                                          completion:(void(^)(void))completion;

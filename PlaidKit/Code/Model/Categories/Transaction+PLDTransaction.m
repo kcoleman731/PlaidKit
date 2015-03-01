@@ -59,17 +59,17 @@ NSString *const PLDTransactionPendingKey = @"pending";
 
 NSString *const PLDTransactionEntityName = @"Transaction";
 
-+ (instancetype)initWithTransactionData:(NSDictionary *)transactionData withContect:(NSManagedObjectContext *)context
++ (instancetype)transactionWithData:(NSDictionary *)data withContect:(NSManagedObjectContext *)context
 {
-    Transaction *transaction = [NSEntityDescription insertNewObjectForEntityForName:PLDTransactionEntityName inManagedObjectContext:context];
+    Transaction *transaction = [self instanceWithIdentifier:data[PLDTransactionIdentifierKey] managedObjectContext:context];
     if(transaction) {
-        transaction.account = [self accountForIdentifier:transactionData[PLDTransactionAccountIdentifierKey] inContext:context];
-        transaction.identifier = transactionData[PLDTransactionIdentifierKey];
-        transaction.amount = transactionData[PLDTransactionAmountKey];
-       // transaction.categoryIdentifier = transactionData[PLDTransactionCategoryIdentifierKey];
-        //transaction.date = transactionData[PLDTransactionDateKey];
-        transaction.name = transactionData[PLDTransactionNameKey];
-        transaction.pending = transactionData[PLDTransactionPendingKey];
+        transaction.account = [self accountForIdentifier:data[PLDTransactionAccountIdentifierKey] inContext:context];
+        transaction.identifier = data[PLDTransactionIdentifierKey];
+        transaction.amount = data[PLDTransactionAmountKey];
+       // transaction.categoryIdentifier = data[PLDTransactionCategoryIdentifierKey];
+        //transaction.date = data[PLDTransactionDateKey];
+        transaction.name = data[PLDTransactionNameKey];
+        transaction.pending = data[PLDTransactionPendingKey];
     }
     return transaction;
 }

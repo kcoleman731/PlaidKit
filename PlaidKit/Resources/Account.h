@@ -2,14 +2,14 @@
 //  Account.h
 //  PlaidKit
 //
-//  Created by Kevin Coleman on 2/16/15.
+//  Created by Kevin Coleman on 3/1/15.
 //  Copyright (c) 2015 Kevin Coleman. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Balance, Transaction, User;
+@class Balance, Transaction;
 
 @interface Account : NSManagedObject
 
@@ -23,8 +23,8 @@
 @property (nonatomic, retain) NSString * routing;
 @property (nonatomic, retain) NSString * shortNumber;
 @property (nonatomic, retain) NSString * type;
+@property (nonatomic, retain) NSString * user;
 @property (nonatomic, retain) Balance *balance;
-@property (nonatomic, retain) User *owner;
 @property (nonatomic, retain) NSSet *transactions;
 @end
 

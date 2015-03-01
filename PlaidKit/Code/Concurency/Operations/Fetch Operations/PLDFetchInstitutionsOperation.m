@@ -13,7 +13,9 @@
 
 - (void)executeOperation
 {
-    [self fetchInstitutions];
+    if (self.isReady) {
+        [self fetchInstitutions];
+    }
 }
 
 - (void)fetchInstitutions

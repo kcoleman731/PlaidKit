@@ -11,6 +11,7 @@
         <attribute name="routing" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="shortNumber" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="user" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="balance" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Balance" inverseName="account" inverseEntity="Balance" syncable="YES"/>
         <relationship name="transactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transaction" inverseName="account" inverseEntity="Transaction" syncable="YES"/>
     </entity>
@@ -64,7 +65,7 @@
         <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="transaction" inverseEntity="Location" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Account" positionX="-63" positionY="-18" width="128" height="225"/>
+        <element name="Account" positionX="-63" positionY="-18" width="128" height="240"/>
         <element name="Balance" positionX="-54" positionY="72" width="128" height="88"/>
         <element name="Credential" positionX="-27" positionY="108" width="128" height="88"/>
         <element name="Institution" positionX="-54" positionY="81" width="128" height="135"/>
