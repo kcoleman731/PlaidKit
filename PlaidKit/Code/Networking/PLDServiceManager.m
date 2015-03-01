@@ -299,8 +299,8 @@
 - (NSDictionary *)bodyWithParameters:(NSDictionary *)parameters
 {
     NSMutableDictionary *params = [parameters mutableCopy];
-    [params setValue:PLDTestClientID forKey:PLDClientIDKey];
-    [params setValue:PLDTestSecret forKey:PLDSecretKey];
+    [params setValue:self.clientID forKey:PLDClientIDKey];
+    [params setValue:self.secret forKey:PLDSecretKey];
     return params;
 }
 

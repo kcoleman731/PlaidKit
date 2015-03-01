@@ -13,6 +13,7 @@
 #import "Institution+PLDInstitution.h"
 #import "P_Category+PLDCategory.h"
 #import "PLDAuthenticationItem.h"
+#import "Transaction+PLDTransaction.h"
 
 @interface Plaid ()
 
@@ -42,7 +43,7 @@
     [[self sharedInstance] setSecret:secret];
     
     // Initialize Core Data Stack
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Plaid" withExtension:@"momd"];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"PlaidKitResource.bundle/Plaid" withExtension:@"momd"];
     NSManagedObjectModel *managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     CoreDataStack *coreDataStack = [CoreDataStack stackWithManagedObjectModel:managedObjectModel];
     [[self sharedInstance] setCoreDataStack:coreDataStack];
@@ -51,6 +52,8 @@
     //https://tartan.plaid.com/
     NSURL *baseURL = [NSURL URLWithString:@"https://api.plaid.com/"];
     PLDServiceManager *service = [PLDServiceManager initWithBaseURL:baseURL];
+    service.clientID = clientID;
+    service.secret = secret;
     [[self sharedInstance] setServiceManager:service];
     
     // Setup Operatio Controller
@@ -75,9 +78,29 @@
 //                                               object:nil];
 }
 
-- (NSOrderedSet *)transactionForAccount:(Account *)account
++ (NSArray *)allAccounts
 {
-    return nil;
+    Plaid *plaid = [self sharedInstance];
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:PLDAccountEntityName];
+    NSError *error;
+    NSArray *accounts = [plaid.coreDataStack.userInterfaceContext executeFetchRequest:request error:&error];
+    if (error) {
+        NSLog(@"Failed fetching insitutions with error %@", error);
+    }
+    return accounts;
+}
+
++ (NSArray *)transactionForAccount:(Account *)account
+{
+    Plaid *plaid = [self sharedInstance];
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:PLDTransactionEntityName];
+    request.predicate = [NSPredicate predicateWithFormat:@"SELF.account = %@", account];
+    NSError *error;
+    NSArray *transactions = [plaid.coreDataStack.userInterfaceContext executeFetchRequest:request error:&error];
+    if (error) {
+        NSLog(@"Failed fetching insitutions with error %@", error);
+    }
+    return transactions;
 }
 
 + (NSArray *)categories

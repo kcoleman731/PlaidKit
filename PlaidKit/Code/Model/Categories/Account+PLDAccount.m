@@ -16,6 +16,8 @@ NSString *const PLDAccountUserKey = @"_user";
 NSString *const PLDAccountBalanceKey = @"balance";
 NSString *const PLDAccountInstitutionTypeKey = @"institution_type";
 NSString *const PLDAccountMetaKey = @"meta";
+NSString *const PLDAccountNameKey = @"name";
+NSString *const PLDAccountShortNumberKey = @"number";
 NSString *const PLDAccountTypeKey = @"type";
 
 /*
@@ -38,17 +40,20 @@ NSString *const PLDAccountTypeKey = @"type";
 
 @implementation Account (PLDAccount)
 
-static NSString *const PLDAccountIdentifier = @"Account";
+NSString *const PLDAccountEntityName = @"Account";
 
 + (instancetype)initWithAccountData:(NSDictionary *)accountData context:(NSManagedObjectContext *)context
 {
-    Account *account = [NSEntityDescription insertNewObjectForEntityForName:PLDAccountIdentifier inManagedObjectContext:context];
+    Account *account = [NSEntityDescription insertNewObjectForEntityForName:PLDAccountEntityName inManagedObjectContext:context];
     if(account) {
         account.identifier = accountData[PLDAccountIdentifierKey];
         account.item = accountData[PLDAccountItemKey];
-        account.institutionType = accountData[PLDInstitutionTypeKey];
-        account.type = accountData[PLDAccountTypeKey];
+        // Handle User
         account.balance = [Balance initWithBalaceData:accountData[PLDAccountBalanceKey] withContect:context];
+        account.institutionType = accountData[PLDInstitutionTypeKey];
+        account.name = accountData[PLDAccountMetaKey][PLDAccountNameKey];
+        account.shortNumber = accountData[PLDAccountMetaKey][PLDAccountShortNumberKey];
+        account.type = accountData[PLDAccountTypeKey];
     }
     return account;
 }
@@ -56,8 +61,8 @@ static NSString *const PLDAccountIdentifier = @"Account";
 + (Account *)instanceWithIdentifier:(NSString *)identifier
                managedObjectContext:(NSManagedObjectContext *)managedObjectContext;
 {
-    if (![self checkForExistingEntity:PLDAccountIdentifier withIdentifier:identifier andContext:managedObjectContext]) {
-        return [NSEntityDescription insertNewObjectForEntityForName:PLDAccountIdentifier inManagedObjectContext:managedObjectContext];
+    if (![self checkForExistingEntity:PLDAccountEntityName withIdentifier:identifier andContext:managedObjectContext]) {
+        return [NSEntityDescription insertNewObjectForEntityForName:PLDAccountEntityName inManagedObjectContext:managedObjectContext];
     }
     return nil;
 }

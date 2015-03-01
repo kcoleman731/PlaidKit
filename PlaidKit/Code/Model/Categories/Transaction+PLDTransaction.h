@@ -9,6 +9,8 @@
 #import "Transaction.h"
 #import "NSManagedObject+PLDManagedObject.h"
 
+extern NSString *const PLDTransactionEntityName;
+
 extern NSString *const PLDTransactionIdentifierKey;
 extern NSString *const PLDTransactionAmountKey;
 extern NSString *const PLDTransactionCategoryIDKey;

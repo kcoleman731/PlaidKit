@@ -8,6 +8,7 @@
 
 #import "Transaction+PLDTransaction.h"
 #import "PLDUtilities.h"
+#import "Account+PLDAccount.h"
 
 NSString *const PLDTransactiontransactionKey = @"_transaction";
 NSString *const PLDTransactionAccountIdentifierKey = @"_account";
@@ -56,13 +57,13 @@ NSString *const PLDTransactionPendingKey = @"pending";
 
 @implementation Transaction (PLDTransaction)
 
-static NSString *TransactionEntityName = @"Transaction";
+NSString *const PLDTransactionEntityName = @"Transaction";
 
 + (instancetype)initWithTransactionData:(NSDictionary *)transactionData withContect:(NSManagedObjectContext *)context
 {
-    Transaction *transaction = [NSEntityDescription insertNewObjectForEntityForName:TransactionEntityName inManagedObjectContext:context];
+    Transaction *transaction = [NSEntityDescription insertNewObjectForEntityForName:PLDTransactionEntityName inManagedObjectContext:context];
     if(transaction) {
-        //transaction.account = [self accountForIdentifier:transactionData[PLDTransactionAccountIdentifierKey]];
+        transaction.account = [self accountForIdentifier:transactionData[PLDTransactionAccountIdentifierKey] inContext:context];
         transaction.identifier = transactionData[PLDTransactionIdentifierKey];
         transaction.amount = transactionData[PLDTransactionAmountKey];
        // transaction.categoryIdentifier = transactionData[PLDTransactionCategoryIdentifierKey];
@@ -76,15 +77,22 @@ static NSString *TransactionEntityName = @"Transaction";
 + (Transaction *)instanceWithIdentifier:(NSString *)identifier
                    managedObjectContext:(NSManagedObjectContext *)managedObjectContext;
 {
-    if (![self checkForExistingEntity:TransactionEntityName withIdentifier:identifier andContext:managedObjectContext]) {
-        return [NSEntityDescription insertNewObjectForEntityForName:TransactionEntityName inManagedObjectContext:managedObjectContext];
+    if (![self checkForExistingEntity:PLDTransactionEntityName withIdentifier:identifier andContext:managedObjectContext]) {
+        return [NSEntityDescription insertNewObjectForEntityForName:PLDTransactionEntityName inManagedObjectContext:managedObjectContext];
     }
     return nil;
 }
 
-+ (Account *)accountForIdentifier:(NSString *)identifier
++ (Account *)accountForIdentifier:(NSString *)identifier inContext:(NSManagedObjectContext *)context
 {
-    return nil;
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:PLDAccountEntityName];
+    request.predicate = [NSPredicate predicateWithFormat:@"SELF.identifier = %@", identifier];
+    NSError *error;
+    NSArray *accounts = [context executeFetchRequest:request error:&error];
+    if (error) {
+        NSLog(@"Failed fetching insitutions with error %@", error);
+    }
+    return accounts.firstObject;
 }
 
 @end

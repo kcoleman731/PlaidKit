@@ -22,11 +22,11 @@
 
 + (NSString *)secret;
 
-+ (NSOrderedSet *)allAccounts;
++ (NSArray *)allAccounts;
 
-+ (NSOrderedSet *)transactionForAccount:(Account *)account;
++ (NSArray *)transactionForAccount:(Account *)account;
 
-+ (NSOrderedSet *)categories;
++ (NSArray *)categories;
 
 + (NSArray *)institutions;
 

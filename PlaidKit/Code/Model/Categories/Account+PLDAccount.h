@@ -14,6 +14,8 @@ typedef NS_ENUM(NSUInteger, PLDAccountType) {
     PLDAccountTypeCredit,
 };
 
+extern NSString *const PLDAccountEntityName;
+
 extern NSString *const PLDAccountIdentifierKey;
 extern NSString *const PLDAccountItemKey;
 extern NSString *const PLDAccountBalanceKey;

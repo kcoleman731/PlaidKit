@@ -7,6 +7,7 @@
 //
 
 #import "PLDPersistAccountsOperation.h"
+#import "Account+PLDAccount.h"
 
 @interface PLDPersistAccountsOperation ()
 
@@ -27,8 +28,13 @@
 
 - (void)executeOperation
 {
-    for (NSDictionary *account in self.accountData) {
-        
+    for (NSDictionary *accountData in self.accountData) {
+        [Account initWithAccountData:accountData context:self.context];
+    }
+    NSError *error;
+    [self.context save:&error];
+    if (error) {
+        self.error = error;
     }
     [self finish];
 }
