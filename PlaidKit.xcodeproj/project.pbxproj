@@ -7,50 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A315B3D1A8B420B00AB893B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A315B3B1A8B420B00AB893B /* Main.storyboard */; };
-		0A315B3F1A8B420B00AB893B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A315B3E1A8B420B00AB893B /* Images.xcassets */; };
-		0A315B421A8B420B00AB893B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A315B401A8B420B00AB893B /* LaunchScreen.xib */; };
-		0A315B4E1A8B420B00AB893B /* PlaidKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315B4D1A8B420B00AB893B /* PlaidKitTests.m */; };
-		0A315BAD1A8B423800AB893B /* PLDFetchCategoriesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315B5E1A8B423800AB893B /* PLDFetchCategoriesOperation.m */; };
-		0A315BAE1A8B423800AB893B /* PLDFetchInstitutionsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315B601A8B423800AB893B /* PLDFetchInstitutionsOperation.m */; };
-		0A315BAF1A8B423800AB893B /* PLDFetchTransactionsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315B621A8B423800AB893B /* PLDFetchTransactionsOperation.m */; };
-		0A315BB01A8B423800AB893B /* PLDPersistAccountsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315B651A8B423800AB893B /* PLDPersistAccountsOperation.m */; };
-		0A315BB11A8B423800AB893B /* PLDPersistCategoriesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315B671A8B423800AB893B /* PLDPersistCategoriesOperation.m */; };
-		0A315BB21A8B423800AB893B /* PLDPersistInstitutionsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315B691A8B423800AB893B /* PLDPersistInstitutionsOperation.m */; };
-		0A315BB31A8B423800AB893B /* PLDPersistTransactionsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315B6B1A8B423800AB893B /* PLDPersistTransactionsOperation.m */; };
-		0A315BB51A8B423800AB893B /* PLDOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315B6F1A8B423800AB893B /* PLDOperation.m */; };
-		0A315BB61A8B423800AB893B /* PLDOperationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315B711A8B423800AB893B /* PLDOperationController.m */; };
-		0A315BB71A8B423800AB893B /* Account+PLDAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315B751A8B423800AB893B /* Account+PLDAccount.m */; };
-		0A315BB81A8B423800AB893B /* Balance+PLDBalance.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315B771A8B423800AB893B /* Balance+PLDBalance.m */; };
-		0A315BB91A8B423800AB893B /* Institution+PLDInstitution.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315B791A8B423800AB893B /* Institution+PLDInstitution.m */; };
-		0A315BBA1A8B423800AB893B /* NSManagedObject+PLDManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315B7B1A8B423800AB893B /* NSManagedObject+PLDManagedObject.m */; };
-		0A315BBB1A8B423800AB893B /* P_Category+PLDCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315B7D1A8B423800AB893B /* P_Category+PLDCategory.m */; };
-		0A315BBD1A8B423800AB893B /* Product+PLDProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315B811A8B423800AB893B /* Product+PLDProduct.m */; };
-		0A315BBE1A8B423800AB893B /* Transaction+PLDTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315B831A8B423800AB893B /* Transaction+PLDTransaction.m */; };
-		0A315BC01A8B423800AB893B /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315B871A8B423800AB893B /* CoreDataStack.m */; };
-		0A315BCB1A8B423800AB893B /* HTTPResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315B9F1A8B423800AB893B /* HTTPResponseSerializer.m */; };
-		0A315BCC1A8B423800AB893B /* PLDServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315BA11A8B423800AB893B /* PLDServiceManager.m */; };
-		0A315BCD1A8B423800AB893B /* Plaid.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315BA41A8B423800AB893B /* Plaid.m */; };
-		0A315BCE1A8B423800AB893B /* PLDAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315BA61A8B423800AB893B /* PLDAccount.m */; };
-		0A315BCF1A8B423800AB893B /* PLDAuthenticationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315BA81A8B423800AB893B /* PLDAuthenticationItem.m */; };
-		0A315BD01A8B423800AB893B /* PLDUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315BAB1A8B423800AB893B /* PLDUtilities.m */; };
 		0A315BD61A8B424100AB893B /* PlaidTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315BD11A8B424100AB893B /* PlaidTest.m */; };
 		0A315BD71A8B424100AB893B /* PLDOperationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315BD21A8B424100AB893B /* PLDOperationTests.m */; };
 		0A315BD81A8B424100AB893B /* PLDServiceManagerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315BD31A8B424100AB893B /* PLDServiceManagerTest.m */; };
 		0A315BD91A8B424100AB893B /* PLDTestUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A315BD51A8B424100AB893B /* PLDTestUtilities.m */; };
-		0AA2F3701AA3D8E900F85E69 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA2F36F1AA3D8E900F85E69 /* Account.m */; };
-		0AAF1CFE1AA3B83100754023 /* Balance.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAF1CEE1AA3B83100754023 /* Balance.m */; };
-		0AAF1CFF1AA3B83100754023 /* Credential.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAF1CF01AA3B83100754023 /* Credential.m */; };
-		0AAF1D001AA3B83100754023 /* Institution.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAF1CF21AA3B83100754023 /* Institution.m */; };
-		0AAF1D011AA3B83100754023 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAF1CF41AA3B83100754023 /* Location.m */; };
-		0AAF1D021AA3B83100754023 /* MFA.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAF1CF61AA3B83100754023 /* MFA.m */; };
-		0AAF1D031AA3B83100754023 /* P_Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAF1CF81AA3B83100754023 /* P_Category.m */; };
-		0AAF1D041AA3B83100754023 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAF1CFA1AA3B83100754023 /* Product.m */; };
-		0AAF1D051AA3B83100754023 /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAF1CFC1AA3B83100754023 /* Transaction.m */; };
-		0AAF1D391AA3BA3000754023 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAF1D361AA3BA3000754023 /* AppDelegate.m */; };
-		0AAF1D3A1AA3BA3000754023 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0AAF1D371AA3BA3000754023 /* Info.plist */; };
-		0AAF1D3B1AA3BA3000754023 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAF1D381AA3BA3000754023 /* main.m */; };
-		0AB801701A932328004E6185 /* Plaid.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0AB8016E1A932328004E6185 /* Plaid.xcdatamodeld */; };
+		0A9AD7141AA3DF8C009647D1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9AD7111AA3DF8C009647D1 /* AppDelegate.m */; };
+		0A9AD7151AA3DF8C009647D1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A9AD7121AA3DF8C009647D1 /* Info.plist */; };
+		0A9AD7161AA3DF8C009647D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9AD7131AA3DF8C009647D1 /* main.m */; };
+		708265E8664165CA41A57F8A /* libPods-PlaidKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE86015BCF7B4D804F7A2B3 /* libPods-PlaidKit.a */; };
+		7A2A292B92A5042553389579 /* libPods-PlaidKitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC170FB97906E38D1AAA59E /* libPods-PlaidKitTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,86 +30,23 @@
 
 /* Begin PBXFileReference section */
 		0A315B2B1A8B420B00AB893B /* PlaidKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaidKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0A315B3C1A8B420B00AB893B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0A315B3E1A8B420B00AB893B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		0A315B411A8B420B00AB893B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		0A315B471A8B420B00AB893B /* PlaidKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlaidKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A315B4C1A8B420B00AB893B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0A315B4D1A8B420B00AB893B /* PlaidKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlaidKitTests.m; sourceTree = "<group>"; };
-		0A315B5D1A8B423800AB893B /* PLDFetchCategoriesOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDFetchCategoriesOperation.h; sourceTree = "<group>"; };
-		0A315B5E1A8B423800AB893B /* PLDFetchCategoriesOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDFetchCategoriesOperation.m; sourceTree = "<group>"; };
-		0A315B5F1A8B423800AB893B /* PLDFetchInstitutionsOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDFetchInstitutionsOperation.h; sourceTree = "<group>"; };
-		0A315B601A8B423800AB893B /* PLDFetchInstitutionsOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDFetchInstitutionsOperation.m; sourceTree = "<group>"; };
-		0A315B611A8B423800AB893B /* PLDFetchTransactionsOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDFetchTransactionsOperation.h; sourceTree = "<group>"; };
-		0A315B621A8B423800AB893B /* PLDFetchTransactionsOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDFetchTransactionsOperation.m; sourceTree = "<group>"; };
-		0A315B641A8B423800AB893B /* PLDPersistAccountsOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDPersistAccountsOperation.h; sourceTree = "<group>"; };
-		0A315B651A8B423800AB893B /* PLDPersistAccountsOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDPersistAccountsOperation.m; sourceTree = "<group>"; };
-		0A315B661A8B423800AB893B /* PLDPersistCategoriesOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDPersistCategoriesOperation.h; sourceTree = "<group>"; };
-		0A315B671A8B423800AB893B /* PLDPersistCategoriesOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDPersistCategoriesOperation.m; sourceTree = "<group>"; };
-		0A315B681A8B423800AB893B /* PLDPersistInstitutionsOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDPersistInstitutionsOperation.h; sourceTree = "<group>"; };
-		0A315B691A8B423800AB893B /* PLDPersistInstitutionsOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDPersistInstitutionsOperation.m; sourceTree = "<group>"; };
-		0A315B6A1A8B423800AB893B /* PLDPersistTransactionsOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDPersistTransactionsOperation.h; sourceTree = "<group>"; };
-		0A315B6B1A8B423800AB893B /* PLDPersistTransactionsOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDPersistTransactionsOperation.m; sourceTree = "<group>"; };
-		0A315B6E1A8B423800AB893B /* PLDOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDOperation.h; sourceTree = "<group>"; };
-		0A315B6F1A8B423800AB893B /* PLDOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDOperation.m; sourceTree = "<group>"; };
-		0A315B701A8B423800AB893B /* PLDOperationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDOperationController.h; sourceTree = "<group>"; };
-		0A315B711A8B423800AB893B /* PLDOperationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDOperationController.m; sourceTree = "<group>"; };
-		0A315B741A8B423800AB893B /* Account+PLDAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Account+PLDAccount.h"; sourceTree = "<group>"; };
-		0A315B751A8B423800AB893B /* Account+PLDAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Account+PLDAccount.m"; sourceTree = "<group>"; };
-		0A315B761A8B423800AB893B /* Balance+PLDBalance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Balance+PLDBalance.h"; sourceTree = "<group>"; };
-		0A315B771A8B423800AB893B /* Balance+PLDBalance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Balance+PLDBalance.m"; sourceTree = "<group>"; };
-		0A315B781A8B423800AB893B /* Institution+PLDInstitution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Institution+PLDInstitution.h"; sourceTree = "<group>"; };
-		0A315B791A8B423800AB893B /* Institution+PLDInstitution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Institution+PLDInstitution.m"; sourceTree = "<group>"; };
-		0A315B7A1A8B423800AB893B /* NSManagedObject+PLDManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+PLDManagedObject.h"; sourceTree = "<group>"; };
-		0A315B7B1A8B423800AB893B /* NSManagedObject+PLDManagedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+PLDManagedObject.m"; sourceTree = "<group>"; };
-		0A315B7C1A8B423800AB893B /* P_Category+PLDCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "P_Category+PLDCategory.h"; sourceTree = "<group>"; };
-		0A315B7D1A8B423800AB893B /* P_Category+PLDCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "P_Category+PLDCategory.m"; sourceTree = "<group>"; };
-		0A315B801A8B423800AB893B /* Product+PLDProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Product+PLDProduct.h"; sourceTree = "<group>"; };
-		0A315B811A8B423800AB893B /* Product+PLDProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Product+PLDProduct.m"; sourceTree = "<group>"; };
-		0A315B821A8B423800AB893B /* Transaction+PLDTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Transaction+PLDTransaction.h"; sourceTree = "<group>"; };
-		0A315B831A8B423800AB893B /* Transaction+PLDTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Transaction+PLDTransaction.m"; sourceTree = "<group>"; };
-		0A315B861A8B423800AB893B /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
-		0A315B871A8B423800AB893B /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
-		0A315B9E1A8B423800AB893B /* HTTPResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPResponseSerializer.h; sourceTree = "<group>"; };
-		0A315B9F1A8B423800AB893B /* HTTPResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPResponseSerializer.m; sourceTree = "<group>"; };
-		0A315BA01A8B423800AB893B /* PLDServiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDServiceManager.h; sourceTree = "<group>"; };
-		0A315BA11A8B423800AB893B /* PLDServiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDServiceManager.m; sourceTree = "<group>"; };
-		0A315BA31A8B423800AB893B /* Plaid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Plaid.h; sourceTree = "<group>"; };
-		0A315BA41A8B423800AB893B /* Plaid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Plaid.m; sourceTree = "<group>"; };
-		0A315BA51A8B423800AB893B /* PLDAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDAccount.h; sourceTree = "<group>"; };
-		0A315BA61A8B423800AB893B /* PLDAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDAccount.m; sourceTree = "<group>"; };
-		0A315BA71A8B423800AB893B /* PLDAuthenticationItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDAuthenticationItem.h; sourceTree = "<group>"; };
-		0A315BA81A8B423800AB893B /* PLDAuthenticationItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDAuthenticationItem.m; sourceTree = "<group>"; };
-		0A315BAA1A8B423800AB893B /* PLDUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDUtilities.h; sourceTree = "<group>"; };
-		0A315BAB1A8B423800AB893B /* PLDUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDUtilities.m; sourceTree = "<group>"; };
 		0A315BD11A8B424100AB893B /* PlaidTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaidTest.m; sourceTree = "<group>"; };
 		0A315BD21A8B424100AB893B /* PLDOperationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDOperationTests.m; sourceTree = "<group>"; };
 		0A315BD31A8B424100AB893B /* PLDServiceManagerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDServiceManagerTest.m; sourceTree = "<group>"; };
 		0A315BD41A8B424100AB893B /* PLDTestUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDTestUtilities.h; sourceTree = "<group>"; };
 		0A315BD51A8B424100AB893B /* PLDTestUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDTestUtilities.m; sourceTree = "<group>"; };
-		0AA2F36E1AA3D8E900F85E69 /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Account.h; path = ../../../Resources/Account.h; sourceTree = "<group>"; };
-		0AA2F36F1AA3D8E900F85E69 /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Account.m; path = ../../../Resources/Account.m; sourceTree = "<group>"; };
-		0AAF1CED1AA3B83100754023 /* Balance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Balance.h; sourceTree = "<group>"; };
-		0AAF1CEE1AA3B83100754023 /* Balance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Balance.m; sourceTree = "<group>"; };
-		0AAF1CEF1AA3B83100754023 /* Credential.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Credential.h; sourceTree = "<group>"; };
-		0AAF1CF01AA3B83100754023 /* Credential.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Credential.m; sourceTree = "<group>"; };
-		0AAF1CF11AA3B83100754023 /* Institution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Institution.h; sourceTree = "<group>"; };
-		0AAF1CF21AA3B83100754023 /* Institution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Institution.m; sourceTree = "<group>"; };
-		0AAF1CF31AA3B83100754023 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
-		0AAF1CF41AA3B83100754023 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
-		0AAF1CF51AA3B83100754023 /* MFA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFA.h; sourceTree = "<group>"; };
-		0AAF1CF61AA3B83100754023 /* MFA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFA.m; sourceTree = "<group>"; };
-		0AAF1CF71AA3B83100754023 /* P_Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = P_Category.h; sourceTree = "<group>"; };
-		0AAF1CF81AA3B83100754023 /* P_Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = P_Category.m; sourceTree = "<group>"; };
-		0AAF1CF91AA3B83100754023 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
-		0AAF1CFA1AA3B83100754023 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
-		0AAF1CFB1AA3B83100754023 /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
-		0AAF1CFC1AA3B83100754023 /* Transaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transaction.m; sourceTree = "<group>"; };
-		0AAF1D351AA3BA3000754023 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		0AAF1D361AA3BA3000754023 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		0AAF1D371AA3BA3000754023 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0AAF1D381AA3BA3000754023 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0AB8016F1A932328004E6185 /* Plaid.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Plaid.xcdatamodel; sourceTree = "<group>"; };
+		0A9AD7101AA3DF8C009647D1 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = PlaidKit/AppDelegate.h; sourceTree = "<group>"; };
+		0A9AD7111AA3DF8C009647D1 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = PlaidKit/AppDelegate.m; sourceTree = "<group>"; };
+		0A9AD7121AA3DF8C009647D1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = PlaidKit/Info.plist; sourceTree = "<group>"; };
+		0A9AD7131AA3DF8C009647D1 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = PlaidKit/main.m; sourceTree = "<group>"; };
+		51F836F691CDDC63C569B19D /* Pods-PlaidKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaidKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlaidKit/Pods-PlaidKit.debug.xcconfig"; sourceTree = "<group>"; };
+		8DC170FB97906E38D1AAA59E /* libPods-PlaidKitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlaidKitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F9FA2B6553BB491F4470E3D /* Pods-PlaidKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaidKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PlaidKitTests/Pods-PlaidKitTests.release.xcconfig"; sourceTree = "<group>"; };
+		B8D97C01854AFDB1D85AF631 /* Pods-PlaidKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaidKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-PlaidKit/Pods-PlaidKit.release.xcconfig"; sourceTree = "<group>"; };
+		D13FB198C6C407609803FA1A /* Pods-PlaidKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaidKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlaidKitTests/Pods-PlaidKitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FAE86015BCF7B4D804F7A2B3 /* libPods-PlaidKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlaidKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				708265E8664165CA41A57F8A /* libPods-PlaidKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A2A292B92A5042553389579 /* libPods-PlaidKitTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,9 +72,11 @@
 		0A315B221A8B420B00AB893B = {
 			isa = PBXGroup;
 			children = (
-				0A315B2D1A8B420B00AB893B /* PlaidKit */,
+				0A9AD7171AA3DF8F009647D1 /* PlaidKit */,
 				0A315B4A1A8B420B00AB893B /* PlaidKitTests */,
 				0A315B2C1A8B420B00AB893B /* Products */,
+				EED497D148F86974A3EE448E /* Pods */,
+				D26D5900D5B8E695F91678AD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -183,30 +89,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0A315B2D1A8B420B00AB893B /* PlaidKit */ = {
-			isa = PBXGroup;
-			children = (
-				0AB8016D1A932328004E6185 /* Resources */,
-				0A315B571A8B423800AB893B /* Code */,
-				0A315B2E1A8B420B00AB893B /* Supporting Files */,
-			);
-			path = PlaidKit;
-			sourceTree = "<group>";
-		};
-		0A315B2E1A8B420B00AB893B /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				0AAF1D351AA3BA3000754023 /* AppDelegate.h */,
-				0AAF1D361AA3BA3000754023 /* AppDelegate.m */,
-				0AAF1D371AA3BA3000754023 /* Info.plist */,
-				0AAF1D381AA3BA3000754023 /* main.m */,
-				0A315B3B1A8B420B00AB893B /* Main.storyboard */,
-				0A315B3E1A8B420B00AB893B /* Images.xcassets */,
-				0A315B401A8B420B00AB893B /* LaunchScreen.xib */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		0A315B4A1A8B420B00AB893B /* PlaidKitTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,7 +97,6 @@
 				0A315BD31A8B424100AB893B /* PLDServiceManagerTest.m */,
 				0A315BD41A8B424100AB893B /* PLDTestUtilities.h */,
 				0A315BD51A8B424100AB893B /* PLDTestUtilities.m */,
-				0A315B4D1A8B420B00AB893B /* PlaidKitTests.m */,
 				0A315B4B1A8B420B00AB893B /* Supporting Files */,
 			);
 			path = PlaidKitTests;
@@ -229,163 +110,35 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		0A315B571A8B423800AB893B /* Code */ = {
+		0A9AD7171AA3DF8F009647D1 /* PlaidKit */ = {
 			isa = PBXGroup;
 			children = (
-				0A315B581A8B423800AB893B /* Concurency */,
-				0A315B721A8B423800AB893B /* Model */,
-				0A315B9D1A8B423800AB893B /* Networking */,
-				0A315BA21A8B423800AB893B /* Public */,
-				0A315BA91A8B423800AB893B /* Utilities */,
+				0A9AD7101AA3DF8C009647D1 /* AppDelegate.h */,
+				0A9AD7111AA3DF8C009647D1 /* AppDelegate.m */,
+				0A9AD7121AA3DF8C009647D1 /* Info.plist */,
+				0A9AD7131AA3DF8C009647D1 /* main.m */,
 			);
-			path = Code;
+			name = PlaidKit;
 			sourceTree = "<group>";
 		};
-		0A315B581A8B423800AB893B /* Concurency */ = {
+		D26D5900D5B8E695F91678AD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0A315B591A8B423800AB893B /* Operations */,
-				0A315B6E1A8B423800AB893B /* PLDOperation.h */,
-				0A315B6F1A8B423800AB893B /* PLDOperation.m */,
-				0A315B701A8B423800AB893B /* PLDOperationController.h */,
-				0A315B711A8B423800AB893B /* PLDOperationController.m */,
+				FAE86015BCF7B4D804F7A2B3 /* libPods-PlaidKit.a */,
+				8DC170FB97906E38D1AAA59E /* libPods-PlaidKitTests.a */,
 			);
-			path = Concurency;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		0A315B591A8B423800AB893B /* Operations */ = {
+		EED497D148F86974A3EE448E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0A315B5A1A8B423800AB893B /* Fetch Operations */,
-				0A315B631A8B423800AB893B /* Persist Operations */,
+				51F836F691CDDC63C569B19D /* Pods-PlaidKit.debug.xcconfig */,
+				B8D97C01854AFDB1D85AF631 /* Pods-PlaidKit.release.xcconfig */,
+				D13FB198C6C407609803FA1A /* Pods-PlaidKitTests.debug.xcconfig */,
+				9F9FA2B6553BB491F4470E3D /* Pods-PlaidKitTests.release.xcconfig */,
 			);
-			path = Operations;
-			sourceTree = "<group>";
-		};
-		0A315B5A1A8B423800AB893B /* Fetch Operations */ = {
-			isa = PBXGroup;
-			children = (
-				0A315B5D1A8B423800AB893B /* PLDFetchCategoriesOperation.h */,
-				0A315B5E1A8B423800AB893B /* PLDFetchCategoriesOperation.m */,
-				0A315B5F1A8B423800AB893B /* PLDFetchInstitutionsOperation.h */,
-				0A315B601A8B423800AB893B /* PLDFetchInstitutionsOperation.m */,
-				0A315B611A8B423800AB893B /* PLDFetchTransactionsOperation.h */,
-				0A315B621A8B423800AB893B /* PLDFetchTransactionsOperation.m */,
-			);
-			path = "Fetch Operations";
-			sourceTree = "<group>";
-		};
-		0A315B631A8B423800AB893B /* Persist Operations */ = {
-			isa = PBXGroup;
-			children = (
-				0A315B641A8B423800AB893B /* PLDPersistAccountsOperation.h */,
-				0A315B651A8B423800AB893B /* PLDPersistAccountsOperation.m */,
-				0A315B661A8B423800AB893B /* PLDPersistCategoriesOperation.h */,
-				0A315B671A8B423800AB893B /* PLDPersistCategoriesOperation.m */,
-				0A315B681A8B423800AB893B /* PLDPersistInstitutionsOperation.h */,
-				0A315B691A8B423800AB893B /* PLDPersistInstitutionsOperation.m */,
-				0A315B6A1A8B423800AB893B /* PLDPersistTransactionsOperation.h */,
-				0A315B6B1A8B423800AB893B /* PLDPersistTransactionsOperation.m */,
-			);
-			path = "Persist Operations";
-			sourceTree = "<group>";
-		};
-		0A315B721A8B423800AB893B /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				0A315B731A8B423800AB893B /* Categories */,
-				0A315B861A8B423800AB893B /* CoreDataStack.h */,
-				0A315B871A8B423800AB893B /* CoreDataStack.m */,
-				0A315B881A8B423800AB893B /* Managed Objects */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		0A315B731A8B423800AB893B /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-				0A315B741A8B423800AB893B /* Account+PLDAccount.h */,
-				0A315B751A8B423800AB893B /* Account+PLDAccount.m */,
-				0A315B761A8B423800AB893B /* Balance+PLDBalance.h */,
-				0A315B771A8B423800AB893B /* Balance+PLDBalance.m */,
-				0A315B781A8B423800AB893B /* Institution+PLDInstitution.h */,
-				0A315B791A8B423800AB893B /* Institution+PLDInstitution.m */,
-				0A315B7A1A8B423800AB893B /* NSManagedObject+PLDManagedObject.h */,
-				0A315B7B1A8B423800AB893B /* NSManagedObject+PLDManagedObject.m */,
-				0A315B7C1A8B423800AB893B /* P_Category+PLDCategory.h */,
-				0A315B7D1A8B423800AB893B /* P_Category+PLDCategory.m */,
-				0A315B801A8B423800AB893B /* Product+PLDProduct.h */,
-				0A315B811A8B423800AB893B /* Product+PLDProduct.m */,
-				0A315B821A8B423800AB893B /* Transaction+PLDTransaction.h */,
-				0A315B831A8B423800AB893B /* Transaction+PLDTransaction.m */,
-			);
-			path = Categories;
-			sourceTree = "<group>";
-		};
-		0A315B881A8B423800AB893B /* Managed Objects */ = {
-			isa = PBXGroup;
-			children = (
-				0AA2F36E1AA3D8E900F85E69 /* Account.h */,
-				0AA2F36F1AA3D8E900F85E69 /* Account.m */,
-				0AAF1CED1AA3B83100754023 /* Balance.h */,
-				0AAF1CEE1AA3B83100754023 /* Balance.m */,
-				0AAF1CEF1AA3B83100754023 /* Credential.h */,
-				0AAF1CF01AA3B83100754023 /* Credential.m */,
-				0AAF1CF11AA3B83100754023 /* Institution.h */,
-				0AAF1CF21AA3B83100754023 /* Institution.m */,
-				0AAF1CF31AA3B83100754023 /* Location.h */,
-				0AAF1CF41AA3B83100754023 /* Location.m */,
-				0AAF1CF51AA3B83100754023 /* MFA.h */,
-				0AAF1CF61AA3B83100754023 /* MFA.m */,
-				0AAF1CF71AA3B83100754023 /* P_Category.h */,
-				0AAF1CF81AA3B83100754023 /* P_Category.m */,
-				0AAF1CF91AA3B83100754023 /* Product.h */,
-				0AAF1CFA1AA3B83100754023 /* Product.m */,
-				0AAF1CFB1AA3B83100754023 /* Transaction.h */,
-				0AAF1CFC1AA3B83100754023 /* Transaction.m */,
-			);
-			path = "Managed Objects";
-			sourceTree = "<group>";
-		};
-		0A315B9D1A8B423800AB893B /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				0A315B9E1A8B423800AB893B /* HTTPResponseSerializer.h */,
-				0A315B9F1A8B423800AB893B /* HTTPResponseSerializer.m */,
-				0A315BA01A8B423800AB893B /* PLDServiceManager.h */,
-				0A315BA11A8B423800AB893B /* PLDServiceManager.m */,
-			);
-			path = Networking;
-			sourceTree = "<group>";
-		};
-		0A315BA21A8B423800AB893B /* Public */ = {
-			isa = PBXGroup;
-			children = (
-				0A315BA31A8B423800AB893B /* Plaid.h */,
-				0A315BA41A8B423800AB893B /* Plaid.m */,
-				0A315BA51A8B423800AB893B /* PLDAccount.h */,
-				0A315BA61A8B423800AB893B /* PLDAccount.m */,
-				0A315BA71A8B423800AB893B /* PLDAuthenticationItem.h */,
-				0A315BA81A8B423800AB893B /* PLDAuthenticationItem.m */,
-			);
-			path = Public;
-			sourceTree = "<group>";
-		};
-		0A315BA91A8B423800AB893B /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				0A315BAA1A8B423800AB893B /* PLDUtilities.h */,
-				0A315BAB1A8B423800AB893B /* PLDUtilities.m */,
-			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
-		0AB8016D1A932328004E6185 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				0AB8016E1A932328004E6185 /* Plaid.xcdatamodeld */,
-			);
-			path = Resources;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,9 +148,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0A315B511A8B420B00AB893B /* Build configuration list for PBXNativeTarget "PlaidKit" */;
 			buildPhases = (
+				C99C50ED39236A3A71DC185D /* Check Pods Manifest.lock */,
 				0A315B271A8B420B00AB893B /* Sources */,
 				0A315B281A8B420B00AB893B /* Frameworks */,
 				0A315B291A8B420B00AB893B /* Resources */,
+				7969DFCF5854E4C1C2D18266 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -412,9 +167,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0A315B541A8B420B00AB893B /* Build configuration list for PBXNativeTarget "PlaidKitTests" */;
 			buildPhases = (
+				DF45203F58CA2BF91C7A59D0 /* Check Pods Manifest.lock */,
 				0A315B431A8B420B00AB893B /* Sources */,
 				0A315B441A8B420B00AB893B /* Frameworks */,
 				0A315B451A8B420B00AB893B /* Resources */,
+				15DC821A9D759747078912C4 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -468,10 +225,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0AAF1D3A1AA3BA3000754023 /* Info.plist in Resources */,
-				0A315B3D1A8B420B00AB893B /* Main.storyboard in Resources */,
-				0A315B421A8B420B00AB893B /* LaunchScreen.xib in Resources */,
-				0A315B3F1A8B420B00AB893B /* Images.xcassets in Resources */,
+				0A9AD7151AA3DF8C009647D1 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,46 +238,76 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		15DC821A9D759747078912C4 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PlaidKitTests/Pods-PlaidKitTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7969DFCF5854E4C1C2D18266 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PlaidKit/Pods-PlaidKit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C99C50ED39236A3A71DC185D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DF45203F58CA2BF91C7A59D0 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0A315B271A8B420B00AB893B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A315BBD1A8B423800AB893B /* Product+PLDProduct.m in Sources */,
-				0A315BB71A8B423800AB893B /* Account+PLDAccount.m in Sources */,
-				0A315BBA1A8B423800AB893B /* NSManagedObject+PLDManagedObject.m in Sources */,
-				0A315BAE1A8B423800AB893B /* PLDFetchInstitutionsOperation.m in Sources */,
-				0AAF1D011AA3B83100754023 /* Location.m in Sources */,
-				0AB801701A932328004E6185 /* Plaid.xcdatamodeld in Sources */,
-				0A315BCF1A8B423800AB893B /* PLDAuthenticationItem.m in Sources */,
-				0A315BB21A8B423800AB893B /* PLDPersistInstitutionsOperation.m in Sources */,
-				0AAF1D031AA3B83100754023 /* P_Category.m in Sources */,
-				0A315BCE1A8B423800AB893B /* PLDAccount.m in Sources */,
-				0A315BAD1A8B423800AB893B /* PLDFetchCategoriesOperation.m in Sources */,
-				0A315BCD1A8B423800AB893B /* Plaid.m in Sources */,
-				0AAF1CFE1AA3B83100754023 /* Balance.m in Sources */,
-				0A315BB11A8B423800AB893B /* PLDPersistCategoriesOperation.m in Sources */,
-				0A315BC01A8B423800AB893B /* CoreDataStack.m in Sources */,
-				0A315BB91A8B423800AB893B /* Institution+PLDInstitution.m in Sources */,
-				0A315BB01A8B423800AB893B /* PLDPersistAccountsOperation.m in Sources */,
-				0A315BB51A8B423800AB893B /* PLDOperation.m in Sources */,
-				0AA2F3701AA3D8E900F85E69 /* Account.m in Sources */,
-				0AAF1CFF1AA3B83100754023 /* Credential.m in Sources */,
-				0AAF1D3B1AA3BA3000754023 /* main.m in Sources */,
-				0AAF1D391AA3BA3000754023 /* AppDelegate.m in Sources */,
-				0AAF1D001AA3B83100754023 /* Institution.m in Sources */,
-				0AAF1D041AA3B83100754023 /* Product.m in Sources */,
-				0A315BAF1A8B423800AB893B /* PLDFetchTransactionsOperation.m in Sources */,
-				0A315BB61A8B423800AB893B /* PLDOperationController.m in Sources */,
-				0AAF1D051AA3B83100754023 /* Transaction.m in Sources */,
-				0A315BCB1A8B423800AB893B /* HTTPResponseSerializer.m in Sources */,
-				0A315BBE1A8B423800AB893B /* Transaction+PLDTransaction.m in Sources */,
-				0A315BCC1A8B423800AB893B /* PLDServiceManager.m in Sources */,
-				0A315BB31A8B423800AB893B /* PLDPersistTransactionsOperation.m in Sources */,
-				0AAF1D021AA3B83100754023 /* MFA.m in Sources */,
-				0A315BBB1A8B423800AB893B /* P_Category+PLDCategory.m in Sources */,
-				0A315BD01A8B423800AB893B /* PLDUtilities.m in Sources */,
-				0A315BB81A8B423800AB893B /* Balance+PLDBalance.m in Sources */,
+				0A9AD7161AA3DF8C009647D1 /* main.m in Sources */,
+				0A9AD7141AA3DF8C009647D1 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,7 +318,6 @@
 				0A315BD61A8B424100AB893B /* PlaidTest.m in Sources */,
 				0A315BD71A8B424100AB893B /* PLDOperationTests.m in Sources */,
 				0A315BD81A8B424100AB893B /* PLDServiceManagerTest.m in Sources */,
-				0A315B4E1A8B420B00AB893B /* PlaidKitTests.m in Sources */,
 				0A315BD91A8B424100AB893B /* PLDTestUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -548,25 +331,6 @@
 			targetProxy = 0A315B481A8B420B00AB893B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		0A315B3B1A8B420B00AB893B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0A315B3C1A8B420B00AB893B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		0A315B401A8B420B00AB893B /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0A315B411A8B420B00AB893B /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		0A315B4F1A8B420B00AB893B /* Debug */ = {
@@ -647,6 +411,7 @@
 		};
 		0A315B521A8B420B00AB893B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51F836F691CDDC63C569B19D /* Pods-PlaidKit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PlaidKit/Info.plist;
@@ -657,6 +422,7 @@
 		};
 		0A315B531A8B420B00AB893B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8D97C01854AFDB1D85AF631 /* Pods-PlaidKit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PlaidKit/Info.plist;
@@ -667,6 +433,7 @@
 		};
 		0A315B551A8B420B00AB893B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D13FB198C6C407609803FA1A /* Pods-PlaidKitTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -686,6 +453,7 @@
 		};
 		0A315B561A8B420B00AB893B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F9FA2B6553BB491F4470E3D /* Pods-PlaidKitTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -730,19 +498,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		0AB8016E1A932328004E6185 /* Plaid.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				0AB8016F1A932328004E6185 /* Plaid.xcdatamodel */,
-			);
-			currentVersion = 0AB8016F1A932328004E6185 /* Plaid.xcdatamodel */;
-			path = Plaid.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 0A315B231A8B420B00AB893B /* Project object */;
 }

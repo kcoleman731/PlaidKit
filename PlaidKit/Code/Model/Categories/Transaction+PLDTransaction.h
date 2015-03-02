@@ -20,6 +20,6 @@ extern NSString *const PLDTransactionPendingKey;
 
 @interface Transaction (PLDTransaction)
 
-+ (instancetype)transactionData:(NSDictionary *)data withContect:(NSManagedObjectContext *)context;
++ (instancetype)initWithData:(NSDictionary *)data withContect:(NSManagedObjectContext *)context;
 
 @end

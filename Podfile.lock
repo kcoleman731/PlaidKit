@@ -1,1 +1,17 @@
+PODS:
+  - Expecta (0.3.2)
+  - PlaidKit (0.1.0)
+
+DEPENDENCIES:
+  - Expecta
+  - PlaidKit (from `.`)
+
+EXTERNAL SOURCES:
+  PlaidKit:
+    :path: .
+
+SPEC CHECKSUMS:
+  Expecta: ee641011fe10aa1855d487b40e4976dac50ec342
+  PlaidKit: 4fe9f96a617e0342b30d9db656e52ad02ff5f63d
+
 COCOAPODS: 0.35.0

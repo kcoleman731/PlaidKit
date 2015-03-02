@@ -29,9 +29,7 @@
 - (void)testFetchingInstitutions
 {
     XCTestExpectation *expectation = [self expectationWithDescription:@"Plaid Connection Expectation"];
-    [PLDOperationController fetchInstitutionsWithCompletion:^{
-        [expectation fulfill];
-    }];
+     
     [self waitForCompletionWithTimeOut:5];
 }
 

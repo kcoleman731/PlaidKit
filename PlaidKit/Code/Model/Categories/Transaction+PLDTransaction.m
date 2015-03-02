@@ -59,7 +59,7 @@ NSString *const PLDTransactionPendingKey = @"pending";
 
 NSString *const PLDTransactionEntityName = @"Transaction";
 
-+ (instancetype)transactionWithData:(NSDictionary *)data withContect:(NSManagedObjectContext *)context
++ (instancetype)initWithData:(NSDictionary *)data withContect:(NSManagedObjectContext *)context
 {
     Transaction *transaction = [self instanceWithIdentifier:data[PLDTransactionIdentifierKey] managedObjectContext:context];
     if(transaction) {

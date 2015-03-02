@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>250692F4-A9A6-4209-A11F-7D0A6FC0486C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>PlaidKit</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B61C0900FB53AB8BA112E29A335761C5D6ABDE0F</key>
+		<string>https://github.com/kcoleman731/PlaidKit.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>PlaidKit.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B61C0900FB53AB8BA112E29A335761C5D6ABDE0F</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/kcoleman731/PlaidKit.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B61C0900FB53AB8BA112E29A335761C5D6ABDE0F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B61C0900FB53AB8BA112E29A335761C5D6ABDE0F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>PlaidKit</string>
+		</dict>
+	</array>
+</dict>
+</plist>

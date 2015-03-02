@@ -28,6 +28,11 @@
 
 @implementation Plaid
 
+NSString *const PLDDidPersistedInstitutionsNotification = @"DidPersistedInstitutionsNotification";
+NSString *const PLDDidPersistedCategoriesNotification = @"DidPersistedCategoriesNotification";
+NSString *const PLDDidPersistedTransactionsNotification = @"DidPersistedTransactionsNotification";
+NSString *const PLDDidPersistedAccountNotification = @"DidPersistedAccountNotification";
+
 + (instancetype)sharedInstance
 {
     static Plaid *__instance;
@@ -44,8 +49,7 @@
     [[self sharedInstance] setSecret:secret];
     
     // Initialize Core Data Stack
-    // Use @"PlaidKitResource.bundle/Plaid" when not running tests
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Plaid" withExtension:@"momd"];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"PlaidKitResource.bundle/Plaid" withExtension:@"momd"];
     NSManagedObjectModel *managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     CoreDataStack *coreDataStack = [CoreDataStack stackWithManagedObjectModel:managedObjectModel];
     [[self sharedInstance] setCoreDataStack:coreDataStack];
@@ -243,6 +247,7 @@
         if (operation.error) {
             NSLog(@"Failed persisting transaction data with error: %@", operation.error);
         } else {
+            [[NSNotificationCenter defaultCenter] postNotificationName:PLDDidPersistedAccountNotification object:nil];
             NSLog(@"Transaction Data Persisted");
         }
     }];
@@ -256,6 +261,7 @@
             NSLog(@"Failed persisting transaction data with error: %@", operation.error);
         } else {
             NSLog(@"Transaction Data Persisted");
+            [[NSNotificationCenter defaultCenter] postNotificationName:PLDDidPersistedTransactionsNotification object:nil];
         }
     }];
 }
@@ -272,24 +278,34 @@
 
 - (void)fetchPlaidInstitutionData
 {
-    __block PLDFetchInstitutionsOperation *operation;
-    operation = [self.operationController fetchInstitutionsWithCompletion:^{
-        if (operation.institutions) {
-            [self.operationController persistInstitutionData:operation.institutions completion:^{
-                NSLog(@"Institutions Persisted");
+    __block PLDFetchInstitutionsOperation *fetchOperation;
+    fetchOperation = [self.operationController fetchInstitutionsWithCompletion:^{
+        if (fetchOperation.institutions) {
+            __block PLDPersistInstitutionsOperation *persistOperation;
+            persistOperation = [self.operationController persistInstitutionData:fetchOperation.institutions completion:^{
+                if (!persistOperation.error) {
+                    [[NSNotificationCenter defaultCenter] postNotificationName:PLDDidPersistedInstitutionsNotification object:nil];
+                } else {
+                    NSLog(@"Error fetching institutions %@", persistOperation.error);
+                }
             }];
         } else {
-            NSLog(@"Error fetching institutions %@", operation.error);
+            NSLog(@"Error fetching institutions %@", fetchOperation.error);
         }
     }];
 }
 - (void)fetchPlaidCategoryData
 {
-    __block PLDFetchCategoriesOperation *operation;
-    operation = [self.operationController fetchCategoriesWithCompletion:^{
-        if (operation.categoryData) {
-            [self.operationController persistCategoryData:operation.categoryData completion:^{
-                NSLog(@"Categories Persisted");
+    __block PLDFetchCategoriesOperation *fetchOperation;
+    fetchOperation = [self.operationController fetchCategoriesWithCompletion:^{
+        if (fetchOperation.categoryData) {
+            __block PLDPersistCategoriesOperation *persistOperation;
+            persistOperation = [self.operationController persistCategoryData:fetchOperation.categoryData completion:^{
+                if (!persistOperation.error) {
+                     [[NSNotificationCenter defaultCenter] postNotificationName:PLDDidPersistedCategoriesNotification object:nil];
+                } else {
+                    NSLog(@"Error persisting categories %@", persistOperation.error);
+                }
             }];
         } else {
             NSLog(@"Error fetching categories");

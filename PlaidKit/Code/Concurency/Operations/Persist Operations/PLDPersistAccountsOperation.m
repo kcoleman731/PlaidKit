@@ -36,7 +36,7 @@
 - (void)persistAccountData
 {
     for (NSDictionary *accountData in self.accountData) {
-        [Account initWithAccountData:accountData context:self.context];
+        [Account initWithData:accountData context:self.context];
     }
     NSError *error;
     [self.context save:&error];

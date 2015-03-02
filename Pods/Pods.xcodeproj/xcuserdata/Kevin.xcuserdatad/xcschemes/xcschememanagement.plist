@@ -3,8 +3,60 @@
 <plist version="1.0">
 <dict>
 	<key>SchemeUserState</key>
-	<dict/>
+	<dict>
+		<key>PlaidKitResource.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-PlaidKit-PlaidKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-PlaidKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-PlaidKitTests-Expecta.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-PlaidKitTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict/>
+	<dict>
+		<key>05614110223154BC6DEBE9FB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9752ABADF8E6D1DC78079C48</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9EA74F1064F0A77C9F0BC858</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CD8F103FD01F41C110447093</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F68F02BDE092166466B5E3C3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
 </dict>
 </plist>

@@ -13,6 +13,11 @@
 #import "Account+PLDAccount.h"
 #import "PLDAccount.h"
 
+extern NSString *const PLDDidPersistedInstitutionsNotification;
+extern NSString *const PLDDidPersistedCategoriesNotification;
+extern NSString *const PLDDidPersistedTransactionsNotification;
+extern NSString *const PLDDidPersistedAccountNotification;
+
 @interface Plaid : NSObject
 
 /**

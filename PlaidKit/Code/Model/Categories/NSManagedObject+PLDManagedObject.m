@@ -30,7 +30,7 @@
         return FALSE;
     } else {
         //Message already exists
-        NSLog(@"Venue already exists, do nothing");
+        NSLog(@"%@ already exists, do nothing", entity);
         return TRUE;
     }
     return TRUE;

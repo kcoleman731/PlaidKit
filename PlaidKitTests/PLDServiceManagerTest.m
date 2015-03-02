@@ -26,6 +26,8 @@
     
     NSURL *baseURL = [NSURL URLWithString:@"https://tartan.plaid.com/"];
     self.plaid = [PLDServiceManager initWithBaseURL:baseURL];
+    self.plaid.clientID = PLDTestClientID;
+    self.plaid.secret = PLDTestSecret;
 }
 
 - (void)testConnectionEndpoint
@@ -43,11 +45,14 @@
 - (void)testMFAAuthentication
 {
     XCTestExpectation *expectation = [self expectationWithDescription:@"Plaid MFA Auth Expectation"];
-    [self.plaid connectWithUsername:PLDTestMFAUsername password:PLDTestPassword institutionType:PLDInstitutionTypeWellsFargo success:^(NSDictionary *responseData) {
+    [self.plaid connectWithUsername:PLDTestMFAUsername password:PLDTestPassword institutionType:PLDInstitutionTypeBankOfAmerica success:^(NSDictionary *responseData) {
         [self.plaid MFAAuthWithAnswer:@"tomato" accessToken:PLDTestAccessToken success:^(NSDictionary *responseData) {
             NSLog(@"Response Data: %@", responseData);
             [expectation fulfill];
         } failure:^(NSError *error) {
+            if (error.code == 1108) {
+                [expectation fulfill];
+            }
             NSLog(@"Error: %@", error);
         }];
     } failure:^(NSError *error) {
@@ -63,6 +68,9 @@
         NSLog(@"Response Data: %@", responseData);
         [expectation fulfill];
     } failure:^(NSError *error) {
+        if (error.code == 1108) {
+            [expectation fulfill];
+        }
          NSLog(@"Error: %@", error);
     }];
     [self waitForCompletionWithTimeOut:5];
@@ -147,6 +155,7 @@
         NSLog(@"Response Data: %@", responseData);
         [expectation fulfill];
     } failure:^(NSError *error) {
+        [expectation fulfill];
         NSLog(@"Error: %@", error);
     }];
     [self waitForCompletionWithTimeOut:5];

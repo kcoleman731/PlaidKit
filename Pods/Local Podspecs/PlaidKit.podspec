@@ -8,10 +8,10 @@ Pod::Spec.new do |s|
   s.source                      = { :git => "https://github.com/kcoleman731/PlaidKit.git", :tag => s.version.to_s }
   s.platform                    = :ios, '7.0'
   s.requires_arc                = true
-  s.source_files                = 'PlaidKit/**/*.{h,m}'
+  s.source_files                = 'PlaidKit/Code/**/*.{h,m}'
   s.ios.resource_bundle         = {'PlaidKitResource' => 'Resources/*'}
   s.header_mappings_dir         = 'PlaidKit'
   s.ios.frameworks              = 'UIKit'
   s.ios.deployment_target       = '7.0'
-  s.resource_bundle             = { :PlaidKit => 'PlaidKit/Model/PlaidKit.xcdatamodeld' }
+  s.ios.resource_bundle         = { 'PlaidKitResource' => 'PlaidKit/Resources/*' }
 end
