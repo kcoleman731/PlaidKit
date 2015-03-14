@@ -26,7 +26,7 @@ NSString * PLDCategoryEntityName = @"P_Category";
 
 + (P_Category *)categoryWithData:(NSDictionary *)data context:(NSManagedObjectContext *)context;
 {
-    P_Category *category = [NSEntityDescription insertNewObjectForEntityForName:PLDCategoryEntityName inManagedObjectContext:context];
+    P_Category *category = [self instanceWithIdentifier:data[PLDCategoryIdentifierKey] managedObjectContext:context];
     if (category) {
         category.identifier = data[PLDCategoryIdentifierKey];
         category.type = data[PLDCategoryTypeKey];
@@ -34,5 +34,13 @@ NSString * PLDCategoryEntityName = @"P_Category";
     return category;
 }
 
++ (P_Category *)instanceWithIdentifier:(NSString *)identifier
+                   managedObjectContext:(NSManagedObjectContext *)managedObjectContext;
+{
+    if (![self checkForExistingEntity:PLDCategoryEntityName withIdentifier:identifier andContext:managedObjectContext]) {
+        return [NSEntityDescription insertNewObjectForEntityForName:PLDCategoryEntityName inManagedObjectContext:managedObjectContext];
+    }
+    return nil;
+}
 
 @end

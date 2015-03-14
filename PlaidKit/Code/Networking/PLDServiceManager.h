@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "PLDUtilities.h"
 #import "Institution+PLDInstitution.h"
+#import "PLDAccount.h"
 
 @interface PLDServiceManager : NSObject
 
@@ -25,7 +26,7 @@
 
 - (void)connectWithUsername:(NSString *)username
                    password:(NSString *)password
-            institutionType:(PLDInstitutionType)institutionType
+            institutionType:(NSString *)institutionType
                     success:(void(^)(NSDictionary *responseData))success
                     failure:(void(^)(NSError *error))failure;
 
@@ -55,7 +56,7 @@
 
 - (void)authenticateWithUsername:(NSString *)username
                         password:(NSString *)password
-                 institutionType:(PLDInstitutionType)institutionType
+                 institutionType:(NSString *)institutionType
                          success:(void(^)(NSDictionary *responseData))success
                          failure:(void(^)(NSError *error))failure;
 

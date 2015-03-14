@@ -278,6 +278,9 @@ NSString *const PLDDidPersistedAccountNotification = @"DidPersistedAccountNotifi
 
 - (void)fetchPlaidInstitutionData
 {
+    if ([Plaid allInstitutions].count) {
+        return;
+    }
     __block PLDFetchInstitutionsOperation *fetchOperation;
     fetchOperation = [self.operationController fetchInstitutionsWithCompletion:^{
         if (fetchOperation.institutions) {
@@ -296,6 +299,9 @@ NSString *const PLDDidPersistedAccountNotification = @"DidPersistedAccountNotifi
 }
 - (void)fetchPlaidCategoryData
 {
+    if ([Plaid allCategories].count) {
+        return;
+    }
     __block PLDFetchCategoriesOperation *fetchOperation;
     fetchOperation = [self.operationController fetchCategoriesWithCompletion:^{
         if (fetchOperation.categoryData) {

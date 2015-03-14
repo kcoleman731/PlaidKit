@@ -25,7 +25,7 @@
     static PLDServiceManager *sharedService = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        NSURL *baseURL = [NSURL URLWithString:@"https://tartan.plaid.com/"];
+        NSURL *baseURL = [NSURL URLWithString:@"https://api.plaid.com/"];
         sharedService = [self initWithBaseURL:baseURL];
     });
     return sharedService;
@@ -64,13 +64,13 @@
 
 - (void)connectWithUsername:(NSString *)username
                    password:(NSString *)password
-            institutionType:(PLDInstitutionType)institutionType
+            institutionType:(NSString *)institutionType
                     success:(void(^)(NSDictionary *responseData))success
                     failure:(void(^)(NSError *error))failure
 {
     
     NSURL *URL = [NSURL URLWithString:@"connect" relativeToURL:self.baseURL];
-    NSDictionary *parameters = [self bodyWithParameters:@{PLDInstitutionTypeKey: PLDInstitutionWithType(institutionType),
+    NSDictionary *parameters = [self bodyWithParameters:@{PLDInstitutionTypeKey: institutionType,
                                                           PLDUsernameKey : username,
                                                           PLDPasswordKey : password}];
     [self requestWithType:@"POST" URL:URL parameters:parameters completion:^(NSDictionary *responseData, NSError *error) {
@@ -156,13 +156,13 @@
 
 - (void)authenticateWithUsername:(NSString *)username
                         password:(NSString *)password
-                 institutionType:(PLDInstitutionType)institutionType
+                 institutionType:(NSString *)institutionType
                          success:(void(^)(NSDictionary *responseData))success
                          failure:(void(^)(NSError *error))failure
 {
     
     NSURL *URL = [NSURL URLWithString:@"auth" relativeToURL:self.baseURL];
-    NSDictionary *parameters = [self bodyWithParameters:@{PLDInstitutionTypeKey: PLDInstitutionWithType(institutionType),
+    NSDictionary *parameters = [self bodyWithParameters:@{PLDInstitutionTypeKey: institutionType,
                                                           PLDUsernameKey : username,
                                                           PLDPasswordKey : password}];
     [self requestWithType:@"POST" URL:URL parameters:parameters completion:^(NSDictionary *responseData, NSError *error) {

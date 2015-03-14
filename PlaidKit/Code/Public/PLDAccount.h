@@ -13,8 +13,10 @@
 
 @property (nonatomic) NSString *username;
 @property (nonatomic) NSString *password;
-@property (nonatomic) PLDInstitutionType institutionType;
+@property (nonatomic) NSString *institutionType;
+@property (nonatomic) Institution *institution;
 
-+ (instancetype)accountWithInstitutionType:(PLDInstitutionType)institutionType;
++ (instancetype)accountWithInstitution:(Institution *)institution;
+
 
 @end

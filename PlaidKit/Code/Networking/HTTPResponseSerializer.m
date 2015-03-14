@@ -112,6 +112,7 @@ static NSString *HTTPErrorMessageFromErrorRepresentation(id representation)
     // We have response body and passed Content-Type checks, deserialize it
     NSError *serializationError;
     id deserializedResponse = [NSJSONSerialization JSONObjectWithData:data options:0 error:&serializationError];
+    NSLog(@"Deserialized Response: %@", deserializedResponse);
     if (!deserializedResponse) {
         if (error) *error = serializationError;
         return NO;

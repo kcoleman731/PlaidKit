@@ -1,9 +1,8 @@
 //
 //  CoreDataStack.h
-//  LYRCoreData
+//  PlaidKit
 //
-//  Created by Blake Watters on 9/20/14.
-//  Copyright (c) 2014 Layer. All rights reserved.
+//  Created by Kevin Coleman on 2/20/14.
 //
 
 #import <CoreData/CoreData.h>

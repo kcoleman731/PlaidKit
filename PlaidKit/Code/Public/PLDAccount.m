@@ -10,17 +10,23 @@
 
 @implementation PLDAccount
 
-+ (instancetype)accountWithInstitutionType:(PLDInstitutionType )institutionType
++ (instancetype)accountWithInstitution:(Institution *)institution
 {
-    return [[self alloc] initWithInstitutionType:institutionType];
+    return [[self alloc] initWithInstitution:institution];
 }
 
-- (id)initWithInstitutionType:(PLDInstitutionType)institutionType
+- (id)initWithInstitution:(Institution *)institution
 {
     self = [super init];
     if (self) {
-        _institutionType = institutionType;
+        _institution= institution;
     }
     return self;
 }
+
+- (NSString *)institutionType
+{
+    return self.institution.type;
+}
+
 @end
