@@ -11,7 +11,6 @@ Pod::Spec.new do |s|
   s.source_files                = 'PlaidKit/Code/**/*.{h,m}'
   s.ios.resource_bundle         = {'PlaidKitResource' => 'Resources/*'}
   s.header_mappings_dir         = 'PlaidKit'
-  s.ios.frameworks              = 'UIKit'
   s.ios.deployment_target       = '7.0'
   s.ios.resource_bundle         = { 'PlaidKitResource' => 'PlaidKit/Resources/*' }
 end

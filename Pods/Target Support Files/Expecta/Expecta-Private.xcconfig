@@ -1,0 +1,7 @@
+#include "Expecta.xcconfig"
+FRAMEWORK_SEARCH_PATHS = ${EXPECTA_FRAMEWORK_SEARCH_PATHS}
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/Expecta" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Expecta" "${PODS_ROOT}/Headers/Public/PlaidKit" "${PODS_ROOT}/Headers/Public/PlaidKit/Code/Concurency" "${PODS_ROOT}/Headers/Public/PlaidKit/Code/Concurency/Operations/Fetch Operations" "${PODS_ROOT}/Headers/Public/PlaidKit/Code/Concurency/Operations/Persist Operations" "${PODS_ROOT}/Headers/Public/PlaidKit/Code/Model" "${PODS_ROOT}/Headers/Public/PlaidKit/Code/Model/Categories" "${PODS_ROOT}/Headers/Public/PlaidKit/Code/Model/Managed Objects" "${PODS_ROOT}/Headers/Public/PlaidKit/Code/Networking" "${PODS_ROOT}/Headers/Public/PlaidKit/Code/Public" "${PODS_ROOT}/Headers/Public/PlaidKit/Code/Utilities"
+OTHER_LDFLAGS = ${EXPECTA_OTHER_LDFLAGS}
+PODS_ROOT = ${SRCROOT}
+SKIP_INSTALL = YES

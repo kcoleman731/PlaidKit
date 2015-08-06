@@ -1,0 +1,25 @@
+{
+  "name": "PlaidKit",
+  "version": "0.1.0",
+  "summary": "An iOS client library for the Plaid REST API.",
+  "license": "Apache",
+  "authors": {
+    "Kevin Coleman": "kcoleman731@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/kcoleman731/PlaidKit.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "7.0"
+  },
+  "requires_arc": true,
+  "source_files": "PlaidKit/Code/**/*.{h,m}",
+  "ios": {
+    "resource_bundles": {
+      "PlaidKitResource": "PlaidKit/Resources/*"
+    },
+    "frameworks": "UIKit"
+  },
+  "header_mappings_dir": "PlaidKit"
+}
